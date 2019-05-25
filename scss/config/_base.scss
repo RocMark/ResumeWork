@@ -1,0 +1,35 @@
+body {
+  font-family: Raleway;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul {
+  // padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input {
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"],
+  {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}

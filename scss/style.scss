@@ -1,0 +1,18 @@
+/* 
+  variable 用 sassMap 管理
+  media 要放在最下面
+  normalize & reset & bs4 Reboot 擇一
+  base 自用元件設定
+  斷點採用 BS4設定 變數放於 media檔中
+*/
+
+@import './utils/variable';
+@import './utils/function';
+@import './utils/mixin';
+
+@import './config/normalize';
+// @import './config/reset';
+@import './config/base';
+
+@import './media/media-setting';
+@import './media/media';
