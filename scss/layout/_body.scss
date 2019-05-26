@@ -1,4 +1,10 @@
 body {
-  background-color: color(brown1);
+  background: color(brown1) url('https://cdn.pixabay.com/photo/2015/04/18/09/45/pattern-728509__340.png') repeat center top;
   color: color(text-color);
+}
+
+.warp {
+  background-color: color(brown1);
+  max-width: $max-contentW;
+  margin: 0 auto;
 }

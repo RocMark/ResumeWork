@@ -4,10 +4,14 @@ $color:(
   brown2: #c9bebb,
   brown3: #6c4e43,
   brown4: #8c5333,
+  brown5: #5c4d4d,
   text-color: #3e1000,
-  fb:#3B5999,
+  facebook:#3B5999,
   linkedin: #0077B5,
   twitter:#1DA1F3,
 );
 // 原本使用 map-get(color,grey)
 // 有Function使用 color(grey)
+
+
+$max-contentW: 1200px;

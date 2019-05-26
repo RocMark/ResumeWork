@@ -22,51 +22,27 @@
 @import './layout/nav';
 @import './layout/footer';
 
+// Page
+@import './page/homePage';
+
+
 // media
 @import './media/media-setting';
 @import './media/media';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 測試用區域
-.blankBlock { height: 100vh; }
-
-.tl { border: .5px solid #f50057; }
-
-.testArea {
-  border: 0.5px solid #333;
-  width: 500px;
-  .tBlock {
-    height: 150px;
-  }
-  .test {
-    border: 0.5px solid color(light-blue);
-    vertical-align: middle;
-  }
-
-  .testList {
-    li:nth-child(1){
-      color: red;
-    }
-  }
+// 重要Class
+.maxContentW {
+  max-width: $max-contentW;
 }
+
+// 測試區
+
+
+
+// 實做區
+
+
+
+
+
+

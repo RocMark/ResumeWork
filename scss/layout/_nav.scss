@@ -1,6 +1,12 @@
 .siteNav {
-  background-color: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
   color: #FFF;
+  .navbar-brand {
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.4s;
+    }
+  }
 }
 
 .siteNavItem {

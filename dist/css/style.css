@@ -389,13 +389,26 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 body {
-  background-color: #efeae4;
+  background: #efeae4 url("https://cdn.pixabay.com/photo/2015/04/18/09/45/pattern-728509__340.png") repeat center top;
   color: #3e1000;
 }
 
+.warp {
+  background-color: #efeae4;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .siteNav {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: #FFF;
+}
+
+.siteNav .navbar-brand:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .siteNavItem {
@@ -513,6 +526,10 @@ body {
           transform: scale(2);
 }
 
+.socialBlock .socialLinks .socialLink:nth-child(1) .socialIcon {
+  color: #3B5999;
+}
+
 .socialBlock .socialLinks .socialLink:nth-child(2) .socialIcon {
   color: #1DA1F3;
 }
@@ -521,28 +538,117 @@ body {
   color: #0077B5;
 }
 
-.blankBlock {
-  height: 100vh;
+.welcomeArea {
+  position: relative;
 }
 
-.tl {
-  border: .5px solid #f50057;
+.welcomeArea .welcomeImg {
+  display: block;
+  margin: 0 auto;
+  background-size: contain;
 }
 
-.testArea {
-  border: 0.5px solid #333;
-  width: 500px;
+.welcomeArea .welcomeBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 50vw;
+  text-align: center;
+  padding: 15px;
 }
 
-.testArea .tBlock {
-  height: 150px;
+.welcomeArea .welcomeBlock .welcomeTitle {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFF;
 }
 
-.testArea .test {
-  border: 0.5px solid #b0deff;
-  vertical-align: middle;
+.welcomeArea .welcomeBlock .welcomeSubTitle {
+  color: #FFF;
+  text-decoration: underline;
+  font-style: italic;
 }
 
-.testArea .testList li:nth-child(1) {
-  color: red;
+.serviceArea {
+  margin-bottom: 60px;
+}
+
+.serviceArea .card {
+  background-color: transparent;
+  border: none;
+}
+
+.serviceArea .serviceImg {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.conceptArea {
+  background-color: #5c4d4d;
+  color: #fff;
+  padding: 0 15vw;
+}
+
+.conceptArea .conceptImg {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.conceptArea .conceptArticle {
+  text-align: left;
+  padding: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.conceptArea .conceptArticle .conceptTitle {
+  font-weight: bold;
+}
+
+.conceptArea .conceptArticle .conceptText {
+  display: block;
+}
+
+.userReviewArea .row {
+  padding: 0 5vw;
+}
+
+.userReviewArea .userReviewImg {
+  display: block;
+  height: 67px;
+  width: 67px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.userReviewArea .userReviewCard {
+  padding: 10px;
+}
+
+.userReviewArea .userReviewHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.maxContentW {
+  max-width: 1200px;
 }

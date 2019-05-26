@@ -13,103 +13,222 @@
 
   <body>
 
-    <!-- 導覽列 -->
-    <div id="siteTop" class="container-fluid p-0">
-      <nav class="siteNav navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          <!-- <img src="https://fakeimg.pl/100x100/" width="30" height="30" class="d-inline-block align-top" alt="mainNavIcon"> -->
-          隨意旅遊
-        </a>
-        <!-- 小螢幕漢堡符號 -->
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#siteNav"
-          aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- 各區域連結 小螢幕收起 -->
-        <div class="collapse navbar-collapse" id="siteNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item siteNavItem mr-2">
-              <a class="nav-link" href="#">
-                <i class="fas fa-home"></i>
-                <span>首頁</span>
-              </a>
-            </li>
-            <li class="nav-item siteNavItem mr-2">
-              <a class="nav-link" href="#">
-                <i class="fas fa-shopping-cart"></i>
-                <span>購物車</span>
-              </a>
-            </li>
-            <li class="nav-item siteNavItem mr-2">
-              <a class="nav-link" href="#">
-                <i class="far fa-file"></i>
-                <span>履歷</span>
-              </a>
-            </li>
-            <li class="nav-item siteNavItem mr-2">
-              <a class="nav-link" href="#">
-                <i class="fas fa-user"></i>
-                <span>登入</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <div class="warp">
 
-    <!-- 推滿用 -->
-    <div class="blankBlock"></div>
-
-    <!-- TestArea -->
-    <div class="testArea container-fluid p-5 m-5">
-    </div>
-
-    <!-- 頁首 -->
-
-
-
-    <!-- 頁尾 -->
-    <footer class="siteFooter container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="introBlock col-sm-12 col-md mb-3">
-            <h3 class="blockTitle">關於本社</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit neque corporis dolorem minima
-              consequuntur animi voluptatum id nemo ipsum quam!</p>
-          </div>
-          <div class="contactBlock col-sm-12 col-md">
-            <h3 class="blockTitle">聯絡方式</h3>
-            <ul class="blockList">
-              <li>高雄市中正五路到底</li>
-              <li>+886 886 886</li>
-              <li>onigir77799@gmail.com</li>
+      <!-- 導覽列 -->
+      <div id="siteTop" class="maxContentW fixed-top container-fluid p-0">
+        <nav class="siteNav navbar navbar-expand-md navbar-dark">
+          <a class="navbar-brand" href="#">
+            <i class="fas fa-plane d-inline-block align-center" width="30" height="30"></i>
+            隨意旅遊
+          </a>
+          <!-- 小螢幕漢堡符號 -->
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#siteNav"
+            aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- 各區域連結 小螢幕收起 -->
+          <div class="collapse navbar-collapse" id="siteNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-home"></i>
+                  <span>首頁</span>
+                </a>
+              </li>
+              <li class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span>購物車</span>
+                </a>
+              </li>
+              <li class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="#">
+                  <i class="far fa-file"></i>
+                  <span>履歷</span>
+                </a>
+              </li>
+              <li class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-user"></i>
+                  <span>登入</span>
+                </a>
+              </li>
             </ul>
           </div>
-          <div class="socialBlock col-sm-12 col-md mb-3">
-            <h1 class="blockTitle socialBlockTitle"><a href="#siteTop">隨意旅遊</a></h1>
-            <div class="socialLinks">
-              <div class="socialLink ml-3">
-                <a href="javascript:;">
-                  <i class="socialIcon fab fa-facebook-square"></i>
-                </a>
-              </div>
-              <div class="socialLink ml-3">
-                <a href="javascript:;">
-                  <i class="socialIcon fab fa-twitter-square"></i>
-                </a>
-              </div>
-              <div class="socialLink ml-3">
-                <a href="javascript:;">
-                  <i class="socialIcon fab fa-linkedin"></i>
-                </a>
-              </div>
+        </nav>
+      </div>
 
+      <!-- 頁首 -->
+      <div class="welcomeArea container-fluid p-0 mb-5">
+
+        <img class="welcomeImg img-fluid"
+          src="https://images.unsplash.com/photo-1493515114968-cd0f4e52bf18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          alt="">
+
+        <div class="welcomeBlock">
+          <p class="welcomeTitle">Take a Trip</p>
+          <p class="welcomeSubTitle">go some place where you never been</p>
+        </div>
+      </div>
+
+      <!-- 三大服務-->
+      <div class="serviceArea container-fluid p-0">
+        <div class="row maxContentW mx-auto">
+          <div class="col-sm-12 col-md-4 card">
+            <img class="serviceImg card-img-top"
+              src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+              alt="">
+            <div class="card-body">
+              <h5 class="card-title h2 text-center">Travel with Easy</h5>
+              <p class="card-text text-center">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
+                tempore corrupti aliquid eveniet voluptas neque accusamus.
+              </p>
             </div>
+            <!-- <div class="card-footer text-muted">Footer</div> -->
+          </div>
+          <div class="col-sm-12 col-md-4 card">
+            <img class="serviceImg card-img-top"
+              src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=653&q=80"
+              alt="">
+            <div class="card-body">
+              <h5 class="card-title h2 text-center">Enjoy Your Food</h5>
+              <p class="card-text text-center">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
+                tempore corrupti aliquid eveniet voluptas neque accusamus.
+              </p>
+            </div>
+            <!-- <div class="card-footer text-muted">Footer</div> -->
+          </div>
+          <div class="col-sm-12 col-md-4 card">
+            <img class="serviceImg card-img-top"
+              src="https://images.unsplash.com/photo-1528031069244-0b780c7aeb52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+              alt="">
+            <div class="card-body">
+              <h5 class="card-title h2 text-center">Save Money</h5>
+              <p class="card-text text-center">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
+                tempore corrupti aliquid eveniet voluptas neque accusamus.
+              </p>
+            </div>
+            <!-- <div class="card-footer text-muted">Footer</div> -->
           </div>
         </div>
       </div>
-      <p class="text-center">Copyright © RocMark  |  2019  |  僅供面試使用</p>
-    </footer>
+
+      <!-- 理念 -->
+      <div class="conceptArea container-fluid mb-5">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <img class="conceptImg"
+              src="https://images.unsplash.com/photo-1493997181344-712f2f19d87a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              alt="">
+          </div>
+
+          <div class="col-xs-12 col-md-6 conceptArticle">
+            <p class="conceptTitle h3">
+              獨自旅行，也能很自在
+            </p>
+            <p class="conceptText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sapiente? Autem totam, repellat modi eos illo dolorem iure, commodi id dolores exercitationem quam corrupti delectus. Explicabo sed eius incidunt dolor.</p>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- 用戶感想 -->
+      <div class="userReviewArea container-fluid mb-5 p-0">
+        <div class="row maxContentW mx-auto">
+
+          <div class="userReviewCard col-xs-12 col-sm-4">
+            <div class="userReviewHeader mb-2">
+              <img class="userReviewImg img-fluid"
+                src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+                alt="">
+              <span>散步旅人甲</span>
+            </div>
+            <div class="userReviewBody">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quae?</p>
+            </div>
+          </div>
+          <div class="userReviewCard col-xs-12 col-sm-4">
+            <div class="userReviewHeader mb-2">
+              <img class="userReviewImg img-fluid"
+                src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+                alt="">
+              <span>散步旅人甲</span>
+            </div>
+            <div class="userReviewBody">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quae?</p>
+            </div>
+          </div>
+          <div class="userReviewCard col-xs-12 col-sm-4">
+            <div class="userReviewHeader mb-2">
+              <img class="userReviewImg img-fluid"
+                src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+                alt="">
+              <span>散步旅人甲</span>
+            </div>
+            <div class="userReviewBody">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quae?</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- GoogleMap & ContactForm -->
+      
+
+
+
+      <!-- 頁尾 -->
+      <footer class="siteFooter container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="introBlock col-sm-12 col-md mb-3">
+              <h3 class="blockTitle">關於本社</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit neque corporis dolorem minima
+                consequuntur animi voluptatum id nemo ipsum quam!</p>
+            </div>
+            <div class="contactBlock  col-sm-12 col-md">
+              <h3 class="blockTitle">聯絡方式</h3>
+              <ul class="blockList">
+                <li>高雄市某區某路某里</li>
+                <li>+886 886 886</li>
+                <li>onigir77799@gmail.com</li>
+              </ul>
+            </div>
+            <div class="socialBlock col-sm-12 col-md mb-3">
+              <h1 class="blockTitle socialBlockTitle"><a href="#siteTop">隨意旅遊</a></h1>
+              <div class="socialLinks">
+                <div class="socialLink ml-3">
+                  <a href="javascript:;">
+                    <i class="socialIcon fab fa-facebook-square"></i>
+                  </a>
+                </div>
+                <div class="socialLink ml-3">
+                  <a href="javascript:;">
+                    <i class="socialIcon fab fa-twitter-square"></i>
+                  </a>
+                </div>
+                <div class="socialLink ml-3">
+                  <a href="javascript:;">
+                    <i class="socialIcon fab fa-linkedin"></i>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center">Copyright © RocMark | 2019 | 僅供面試使用</p>
+      </footer>
+
+    </div>
+
 
 
     <!-- Optional JS jQuery first, then Popper.js, then Bootstrap JS -->
