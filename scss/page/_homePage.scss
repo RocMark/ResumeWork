@@ -1,26 +1,28 @@
 .welcomeArea {
   // margin-top: 56px;
   position: relative;
+
   .welcomeImg {
     display: block;
     margin: 0 auto;
     background-size: contain;
-    // max-width: $max-contentW;
-    // max-height: 800px;
   }
+
   .welcomeBlock {
     @include center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, .5);
     max-width: 50vw;
     text-align: center;
     padding: 15px;
+
     .welcomeTitle {
       font-size: 36px;
       font-weight: bold;
-      color: #FFF;
+      color: #fff;
     }
+
     .welcomeSubTitle {
-      color: #FFF;
+      color: #fff;
       text-decoration: underline;
       font-style: italic;
     }
@@ -29,10 +31,12 @@
 
 .serviceArea {
   margin-bottom: 60px;
+
   .card {
     background-color: transparent;
     border: none;
   }
+
   .serviceImg {
     display: block;
     margin: 0 auto;
@@ -56,14 +60,17 @@
     height: auto;
     object-fit: cover;
   }
+
   .conceptArticle {
     text-align: left;
     padding: 20px;
     margin-top: auto;
     margin-bottom: auto;
+
     .conceptTitle {
       font-weight: bold;
     }
+
     .conceptText {
       display: block;
     }
@@ -75,6 +82,7 @@
   .row {
     padding: 0 5vw;
   }
+
   .userReviewImg {
     display: block;
     height: 67px;
@@ -88,8 +96,12 @@
   }
 
   .userReviewHeader {
-    display: flex;
+
+    font-size: 20px;
+
     flex-flow: row nowrap;
     align-items: center;
+    display: flex;
   }
 }
+

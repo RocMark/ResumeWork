@@ -24,11 +24,9 @@
 
 // Page
 @import './page/homePage';
+@import './page/cartPage';
 
 
-// media
-@import './media/media-setting';
-@import './media/media';
 
 // 重要Class
 .maxContentW {
@@ -36,13 +34,95 @@
 }
 
 // 測試區
-
+.testArea {
+  display: none;
+  height: 30vh;
+  padding: 20px;
+  border-bottom: 0.5px solid brown;
+}
 
 
 // 實做區
 
+.productArea {
+  padding: 0 3vw;
+
+  // aside
+  .productSlogan{
+    display: block;
+    margin-bottom: 10px;
+    font-size: $root * 1.4;
+  }
+  .productTab li{
+    padding: 10px;
+    border-bottom: 0.5px solid color(text-color);
+    cursor: pointer;
+    &:hover {
+      background-color: color(text-color);
+      color: #FFF;
+    }
+  }
+  .activeTab {
+    background-color: color(text-color);
+
+    color: #FFF;
+  }
+
+  // main content
+  .productHeader{
+    flex-flow: row nowrap;
+    display: flex;
+
+    button {
+      padding: 9px;
+      color: #fff;
+      background-color: color(text-color);
+      border: none;
+      margin-left: 8px;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+      }
+    }
+
+    .productSearchBar {
+      position: relative;
+      display: inline-block;
+      margin-right: auto;
+      input {
+        padding: 8px 16px;
+        border: 2px solid color(text-color);
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 9px;
+        border: none;
+        background-color: color(text-color);
+        &:hover {
+          transform: none;
+        }
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .product {
+    width: 33.333333%;
+  }
+}
 
 
 
 
 
+
+// media
+@import './media/media-setting';
+@import './media/media';

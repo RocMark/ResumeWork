@@ -388,6 +388,14 @@ input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
 body {
   background: #efeae4 url("https://cdn.pixabay.com/photo/2015/04/18/09/45/pattern-728509__340.png") repeat center top;
   color: #3e1000;
@@ -563,11 +571,11 @@ body {
 .welcomeArea .welcomeBlock .welcomeTitle {
   font-size: 36px;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
 }
 
 .welcomeArea .welcomeBlock .welcomeSubTitle {
-  color: #FFF;
+  color: #fff;
   text-decoration: underline;
   font-style: italic;
 }
@@ -637,9 +645,7 @@ body {
 }
 
 .userReviewArea .userReviewHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  font-size: 20px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -647,8 +653,108 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.welcomeArea .welcomeCartImg {
+  height: 480px;
+  background: #eee url("https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") no-repeat center top fixed;
+  background-size: contain;
 }
 
 .maxContentW {
   max-width: 1200px;
+}
+
+.testArea {
+  display: none;
+  height: 30vh;
+  padding: 20px;
+  border-bottom: 0.5px solid brown;
+}
+
+.productArea {
+  padding: 0 3vw;
+}
+
+.productArea .productSlogan {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22.4px;
+}
+
+.productArea .productTab li {
+  padding: 10px;
+  border-bottom: 0.5px solid #3e1000;
+  cursor: pointer;
+}
+
+.productArea .productTab li:hover {
+  background-color: #3e1000;
+  color: #FFF;
+}
+
+.productArea .activeTab {
+  background-color: #3e1000;
+  color: #FFF;
+}
+
+.productArea .productHeader {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.productArea .productHeader button {
+  padding: 9px;
+  color: #fff;
+  background-color: #3e1000;
+  border: none;
+  margin-left: 8px;
+}
+
+.productArea .productHeader button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.productArea .productHeader .productSearchBar {
+  position: relative;
+  display: inline-block;
+  margin-right: auto;
+}
+
+.productArea .productHeader .productSearchBar input {
+  padding: 8px 16px;
+  border: 2px solid #3e1000;
+}
+
+.productArea .productHeader .productSearchBar button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 9px;
+  border: none;
+  background-color: #3e1000;
+}
+
+.productArea .productHeader .productSearchBar button:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.productArea .productHeader .productSearchBar button i {
+  color: #fff;
+}
+
+.productArea .product {
+  width: 33.333333%;
 }
