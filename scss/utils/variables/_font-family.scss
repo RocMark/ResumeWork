@@ -1,0 +1,22 @@
+// google fonts
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900');
+
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+// 思源黑體(GoogleFont),正黑(繁中),雅黑(簡中)
+// Roboto(GoogleFont英字), sans-serif(內建字體)
+$NotoSansTC: 'Noto Sans TC', sans-serif;
+$JhengHei: 'Microsoft JhengHei', sans-serif;
+$Yahei: 'Microsoft Yahei', sans-serif;
+
+// $font-familyEn: ''
+$font-familyTC: 'Noto Sans TC','Microsoft JhengHei','Microsoft Yahei', sans-serif;
+
+$font-familyHand: 'Courgette', cursive;
+
+// 宣告變數可套用在其他元件上
+// 注意不同字重，要去GoogleFont選擇，並且考慮檔案大小
+
+body {
+  font-family: $font-familyTC;
+}

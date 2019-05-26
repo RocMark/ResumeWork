@@ -1,17 +1,17 @@
-body {
-  font-family: Arial, '微軟正黑體';
-}
-img{
+img {
   max-width: 100%;
   height: auto;
 }
+
 a {
   text-decoration: none;
   color: #000;
 }
+
 p {
   margin: 0;
 }
+
 ul {
   list-style-position: inside;
 }
@@ -19,7 +19,8 @@ ul {
 figure {
   margin: 0;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1 , h2 , h3 , h4 , h5 , h6 {
   margin: 0;
 }
 
@@ -28,21 +29,16 @@ textarea {
 }
 
 input {
-  &[type="button"],
-  &[type="reset"],
-  &[type="submit"],
-  {
+  &[type='button'] , &[type='reset'] , &[type='submit'] , {
     padding: 8px 16px;
     cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
 button {
   cursor: pointer;
-}
-
-input {
-  &:focus {
-    outline:none;
-  }
 }

@@ -16,15 +16,17 @@
     padding: 15px;
 
     .welcomeTitle {
-      font-size: 36px;
-      font-weight: bold;
+      font-size: 48px;
+      font-weight: 700;
       color: #fff;
+      font-family: $font-familyHand,$font-familyTC;
     }
 
     .welcomeSubTitle {
       color: #fff;
-      text-decoration: underline;
-      font-style: italic;
+      // font-size: ;
+      // text-decoration: underline;
+      // font-style: italic;
     }
   }
 }
@@ -43,6 +45,10 @@
     height: 200px;
     width: 200px;
     @include circle;
+  }
+
+  .serviceTitle {
+    font-family: $font-familyHand,$font-familyTC;
   }
 }
 
@@ -68,7 +74,7 @@
     margin-bottom: auto;
 
     .conceptTitle {
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .conceptText {

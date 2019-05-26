@@ -10,20 +10,26 @@
 
 // 功能性
 @import './utils/variable';
+
 @import './utils/function';
+
 @import './utils/mixin';
 
 // Reset
 @import './config/normalize';
+
 @import './config/base';
 
 // Layout
 @import './layout/body';
+
 @import './layout/nav';
+
 @import './layout/footer';
 
 // Page
 @import './page/homePage';
+
 @import './page/cartPage';
 
 // 重要Class
