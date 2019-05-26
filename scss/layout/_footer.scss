@@ -1,59 +1,69 @@
 .siteFooter {
   background-color: color(brown2);
 }
-.socialBlockTitle a{
+
+.socialBlockTitle a {
   color: color(text-color);
 }
 
 .siteFooter {
   padding: 50px 0 16px 0;
+
   .blockTitle {
     margin-bottom: 5px;
     font-weight: bold;
   }
 }
+
 .siteFooter .container {
   @include flex(row,start,space-between);
 }
 
-.contactBlock ul{
+.contactBlock ul {
   padding: 0;
 }
 
 .socialBlock {
   text-align: right;
   padding-right: 15px;
-  .socialBlockTitle a{
+
+  .socialBlockTitle a {
     font-weight: bold;
     font-size: 48px;
     text-decoration: none;
+
     &:hover {
       transform: scale(1.1);
       transition: 0.4s;
     }
   }
+
   .socialLinks {
     @include flex(row,center,flex-end);
 
     .socialLink {
       padding: 5px;
       margin-left: 5px;
+
       &:hover {
         transform: scale(1.3);
         transition: 0.4s;
       }
     }
+
     .socialIcon { transform: scale(2); }
 
     // socialLink 顏色
-    .socialLink:nth-child(1){
-      .socialIcon { color : color(facebook); }
+    .socialLink:nth-child(1) {
+      .socialIcon { color: color(facebook); }
     }
-    .socialLink:nth-child(2){
-      .socialIcon { color : color(twitter); }
+
+    .socialLink:nth-child(2) {
+      .socialIcon { color: color(twitter); }
     }
-    .socialLink:nth-child(3){
-      .socialIcon { color : color(linkedin); }
+
+    .socialLink:nth-child(3) {
+      .socialIcon { color: color(linkedin); }
     }
   }
 }

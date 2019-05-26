@@ -1,0 +1,15 @@
+$color: (
+  light-blue: #b0deff,
+  brown1: #efeae4,
+  brown2: #c9bebb,
+  brown3: #6c4e43,
+  brown4: #8c5333,
+  brown5: #5c4d4d,
+  text-color: #3e1000,
+  facebook:#3b5999,
+  linkedin: #0077b5,
+  twitter:#1da1f3,
+);
+
+// 原本使用 map-get(color,grey)
+// 有Function使用 color(grey)

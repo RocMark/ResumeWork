@@ -12,7 +12,7 @@
 }
 
 // display flex
-@mixin flex($dir: row,$align:center,$justify:center) {
+@mixin flex($dir: row,$align: center,$justify: center) {
   display: flex;
   flex-flow: $dir nowrap;
   align-items: $align;

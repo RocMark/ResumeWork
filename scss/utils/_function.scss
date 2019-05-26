@@ -2,3 +2,12 @@
   @return map-get($color, $color-name);
 }
 
+@function pxToRem($px) {
+  @if ($px == 0) {
+    @return 0;
+  }
+
+  @else {
+    @return $px / $browser-default-font-size * 1rem;
+  }
+}

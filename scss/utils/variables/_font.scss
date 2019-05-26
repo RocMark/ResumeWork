@@ -1,0 +1,38 @@
+// base
+$browser-default-font-size: 16px !default; 
+$base-font-size: 1rem;
+$base-letter-spacing: $base-font-size * 0.08;
+$base-line-height: 1.5;
+
+/* rem 基礎單位 放在 html 中 */
+html {
+  font-size: $browser-default-font-size;
+}
+
+// font-size
+$font-xxl: $base-font-size * 2.25;
+$font-xl: $base-font-size * 1.5;
+$font-l: $base-font-size * 1.25;
+$font-m: $base-font-size * 1.125;
+$font-b: $base-font-size;
+$font-s: $base-font-size * 0.8;
+$font-es: $base-font-size * 0.75;
+
+// letter-spacing
+$lsp-xxl: $base-letter-spacing * 2.25;
+$lsp-xl: $base-letter-spacing * 1.5;
+$lsp-l: $base-letter-spacing * 1.25;
+$lsp-m: $base-letter-spacing * 1.125;
+$lsp-b: $base-letter-spacing;
+$lsp-s: $base-letter-spacing * 0.8;
+$lsp-es: $base-letter-spacing * 0.75;
+
+// font-weight
+$fw-thin: 100;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+$fw-black: 900;
+
+// google fonts
