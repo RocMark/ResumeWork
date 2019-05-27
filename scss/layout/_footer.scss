@@ -67,3 +67,12 @@
     }
   }
 }
+
+.copyrightLink {
+  color: color(text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: color(text-color);
+  }
+}

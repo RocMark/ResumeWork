@@ -1,25 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 社群相關 META TAG -->
+    <!-- 網頁內容類型:預設website -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="網頁標題/內容標題" />
+    <meta property="og:description" content="簡單說明網頁內容" />
+    <meta property="og:image" content="網頁預覽縮圖" />
+    <!-- 整合手機&電腦版 按讚數累計-->
+    <meta property="og:url" content="電腦版網址" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://github.com/fluidicon.png">
+
+    <!-- description -->
+    <!-- 不列入SEO 但仍會在搜尋結果下有描述不可省! -->
+    <meta name="description" content="六角西餐廳">
+
+    <!-- CSS FontAwesome,BS4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="./dist/css/style.min.css" rel="stylesheet">
-    <title>RocMarkSite</title>
+
+    <title>隨意旅遊</title>
   </head>
 
   <body>
 
+    
     <div class="warp">
-
+      <h1 class="d-none">隨意旅遊</h1>
       <!-- 導覽列 -->
       <div id="siteTop" class="maxContentW fixed-top container-fluid p-0">
         <nav class="siteNav navbar navbar-expand-md navbar-dark">
-          <a class="navbar-brand" href="#">
-            <i class="fas fa-plane d-inline-block align-center" width="30" height="30"></i>
+          <h3 class="d-none">導覽列</h3>
+          <a class="navbar-brand" href=".">
+            <i class="fas fa-plane d-inline-block align-center" ></i>
             隨意旅遊
           </a>
           <!-- 小螢幕漢堡符號 -->
@@ -31,13 +53,13 @@
           <div class="collapse navbar-collapse" id="siteNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item siteNavItem mr-2">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href=".">
                   <i class="fas fa-home"></i>
                   <span>首頁</span>
                 </a>
               </li>
               <li class="nav-item siteNavItem mr-2">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="./cart.html">
                   <i class="fas fa-shopping-cart"></i>
                   <span>購物車</span>
                 </a>
@@ -64,7 +86,7 @@
 
         <img class="welcomeImg img-fluid"
           src="https://images.unsplash.com/photo-1493515114968-cd0f4e52bf18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          alt="">
+          alt="welcomeImg">
 
         <div class="welcomeBlock">
           <p class="welcomeTitle">Take a Trip</p>
@@ -72,15 +94,18 @@
         </div>
       </div>
 
+      <div class="testArea">
+      </div>
+
       <!-- 三大服務-->
       <div class="serviceArea container-fluid p-0">
-        <div class="row maxContentW mx-auto">
+        <div class="row mx-auto">
           <div class="col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-              alt="">
+              alt="serviceImg">
             <div class="card-body">
-              <h5 class="card-title h2 text-center">Travel with Easy</h5>
+              <h3 class="serviceTitle card-title h2 text-center">Travel with Easy</h3>
               <p class="card-text text-center">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
                 tempore corrupti aliquid eveniet voluptas neque accusamus.
@@ -91,9 +116,9 @@
           <div class="col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=653&q=80"
-              alt="">
+              alt="serviceImg">
             <div class="card-body">
-              <h5 class="card-title h2 text-center">Enjoy Your Food</h5>
+              <h3 class="serviceTitle card-title h2 text-center">Enjoy Your Food</h3>
               <p class="card-text text-center">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
                 tempore corrupti aliquid eveniet voluptas neque accusamus.
@@ -104,9 +129,9 @@
           <div class="col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1528031069244-0b780c7aeb52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-              alt="">
+              alt="serviceImg">
             <div class="card-body">
-              <h5 class="card-title h2 text-center">Save Money</h5>
+              <h3 class="serviceTitle card-title h2 text-center">Save Money</h3>
               <p class="card-text text-center">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repellendus, recusandae quod iste
                 tempore corrupti aliquid eveniet voluptas neque accusamus.
@@ -123,14 +148,16 @@
           <div class="col-xs-12 col-md-6">
             <img class="conceptImg"
               src="https://images.unsplash.com/photo-1493997181344-712f2f19d87a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-              alt="">
+              alt="conceptImg">
           </div>
 
           <div class="col-xs-12 col-md-6 conceptArticle">
             <p class="conceptTitle h3">
               獨自旅行，也能很自在
             </p>
-            <p class="conceptText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sapiente? Autem totam, repellat modi eos illo dolorem iure, commodi id dolores exercitationem quam corrupti delectus. Explicabo sed eius incidunt dolor.</p>
+            <p class="conceptText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sapiente? Autem
+              totam, repellat modi eos illo dolorem iure, commodi id dolores exercitationem quam corrupti delectus.
+              Explicabo sed eius incidunt dolor.</p>
           </div>
         </div>
 
@@ -145,7 +172,7 @@
             <div class="userReviewHeader mb-2">
               <img class="userReviewImg img-fluid"
                 src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-                alt="">
+                alt="conceptImg">
               <span>散步旅人甲</span>
             </div>
             <div class="userReviewBody">
@@ -156,7 +183,7 @@
             <div class="userReviewHeader mb-2">
               <img class="userReviewImg img-fluid"
                 src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-                alt="">
+                alt="userReviewImg">
               <span>散步旅人甲</span>
             </div>
             <div class="userReviewBody">
@@ -167,7 +194,7 @@
             <div class="userReviewHeader mb-2">
               <img class="userReviewImg img-fluid"
                 src="https://images.unsplash.com/photo-1517480625158-292a09aee755?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-                alt="">
+                alt="userReviewImg">
               <span>散步旅人甲</span>
             </div>
             <div class="userReviewBody">
@@ -180,29 +207,72 @@
       </div>
 
       <!-- GoogleMap & ContactForm -->
-      
+      <div class="contactArea container-fluid">
+        <div class="row">
 
+          <div class="col-sm-12 col-md-6 ml-auto">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7364.140761383247!2d120.30362123955892!3d22.65116437751951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04fbf8f2c8b5%3A0x73152b08ce5a4a9a!2z5oSb5rKz5LmL5b-D!5e0!3m2!1szh-TW!2stw!4v1558836197393!5m2!1szh-TW!2stw"
+              class="googleMap" title="googleMap" allowfullscreen></iframe>
+          </div>
+          <!-- <div class="col-xs-12 col-sm-6"> -->
+          <div class="col-sm-12 col-md-4 mr-auto">
+            <form class="form mt-3 clearfix">
+              <div class="contactForm form-group">
+                <label>
+                  <span>姓名</span><br>
+                  <input type="text" class="form-control mb-3" placeholder="" required>
+                </label>
+                <label>
+                  <span>電話</span><br>
+                  <input type="tel" pattern="{0}\d[-]\d{8}" class="form-control mb-3" placeholder="09-1235678" required>
+                </label>
+                <label>
+                  <span>信箱</span><br>
+                  <input type="email" class="form-control mb-3" required>
+                </label>
+                <label>
+                  <span>Regex練習</span><br>
+                  <input type="text" class="form-control mb-3" placeholder="請輸入" required>
+                </label>
 
+                <div class="contactFormFooter">
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <!-- jQuery 用 show 顯示 -->
+                      錯誤訊息
+                    </div>
+                  <input class="btn btn-primary" type="submit" value="送出" disabled>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
 
       <!-- 頁尾 -->
       <footer class="siteFooter container-fluid">
         <div class="container">
           <div class="row">
             <div class="introBlock col-sm-12 col-md mb-3">
-              <h3 class="blockTitle">關於本社</h3>
+              <h5 class="blockTitle h3">關於本社</h5>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit neque corporis dolorem minima
                 consequuntur animi voluptatum id nemo ipsum quam!</p>
             </div>
             <div class="contactBlock  col-sm-12 col-md">
-              <h3 class="blockTitle">聯絡方式</h3>
+              <h5 class="blockTitle h3">聯絡方式</h5>
               <ul class="blockList">
                 <li>高雄市某區某路某里</li>
                 <li>+886 886 886</li>
                 <li>onigir77799@gmail.com</li>
+                <li>
+                  <a class="githubLink" href="https://github.com/RocMark/ResumeWork">Github Link<i class="animated infinite shake slower far fa-hand-point-left"></i></a>
+                </li>
               </ul>
             </div>
             <div class="socialBlock col-sm-12 col-md mb-3">
-              <h1 class="blockTitle socialBlockTitle"><a href="#siteTop">隨意旅遊</a></h1>
+              <h2 class="blockTitle socialBlockTitle h2"><a href=".">隨意旅遊</a></h2>
               <div class="socialLinks">
                 <div class="socialLink ml-3">
                   <a href="javascript:;">
@@ -224,11 +294,10 @@
             </div>
           </div>
         </div>
-        <p class="text-center">Copyright © RocMark | 2019 | 僅供面試使用</p>
+        <p class="text-center">Copyright © <a class="copyrightLink" href="https://github.com/RocMark/ResumeWork">RocMark</a> | 2019 | 僅供面試使用</p>
       </footer>
 
     </div>
-
 
 
     <!-- Optional JS jQuery first, then Popper.js, then Bootstrap JS -->

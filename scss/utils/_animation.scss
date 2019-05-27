@@ -1,0 +1,66 @@
+/*                                    
+  從 animate.css 拆出
+
+  已包含的動畫:
+  shake
+
+  調整重複次數 repeat: infinite
+  調整動畫快慢 duration: fast,faster,slow,slower
+
+  // 帶把 delay 改成 @function 產生
+  調整延遲動畫 delay: delay-1s  delay-6s
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.fast {
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms;
+}
+
+.animated.faster {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+
+.animated.slow {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.animated.slower {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@keyframes shake {
+  from , to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  10% , 30% , 50% , 70% , 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+  }
+
+  20% , 40% , 60% , 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+}

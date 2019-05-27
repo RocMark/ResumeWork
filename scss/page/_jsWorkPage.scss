@@ -1,0 +1,40 @@
+.p-js-work__block {
+  border: 3px solid color(brown4);
+  padding: 15px;
+
+  .p-js-work__title {
+    font-size: $font-xl;
+    font-weight: 700;
+  }
+
+  .p-js-work__subtitle {
+    // font-weight: 700;
+  }
+}
+
+.b-key {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: #212529;
+  border-radius: 15px;
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .b-key__text {
+    font-size: $font-xl * 1.5;
+  }
+
+  .b-key__subtext {
+    color: #ffc600;
+    text-transform: uppercase;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

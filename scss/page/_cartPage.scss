@@ -5,3 +5,144 @@
     background-size: contain;
   }
 }
+
+.productArea {
+
+  padding: 0 3vw;
+  justify-content: space-around;
+
+  // aside
+  .productSlogan {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 23px;
+  }
+
+  .productTab {
+    padding: 0;
+  }
+
+  .productTab li {
+    padding: 10px;
+    border-bottom: 0.5px solid color(text-color);
+    cursor: pointer;
+
+    &:hover {
+      background-color: color(text-color);
+      color: #fff;
+    }
+  }
+
+  .activeTab {
+    background-color: color(text-color);
+    color: #fff;
+  }
+
+  // main content
+  .productHeader {
+    flex-flow: row nowrap;
+    display: flex;
+
+    button {
+      padding: 9px;
+      color: #fff;
+      background-color: color(text-color);
+      border: none;
+      margin-left: 8px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+      }
+    }
+
+    .productSearchBar {
+      position: relative;
+      display: inline-block;
+      margin-right: auto;
+
+      input {
+        padding: 8px 16px;
+        border: 2px solid color(text-color);
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 9px;
+        border: none;
+        background-color: color(text-color);
+
+        &:hover {
+          transform: none;
+        }
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .productList {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product {
+    position: relative;
+
+    .productTag {
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 23px;
+      border-radius: 15px;
+
+      color: #fff;
+      padding: 5px 10px;
+    }
+
+    .productTag.west {
+      background: color(green);
+    }
+
+    .productTag.east {
+      background: color(blue);
+    }
+
+    .productBody {
+      @extend %box-shadow;
+
+      hr {
+        border: none;
+        height: 1px;
+        background-color: color(text-color);
+      }
+    }
+
+    .productPrice {
+      display: block;
+      text-align: center;
+      font-size: $font-xl;
+      font-weight: 700;
+    }
+
+    .productBtn {
+      padding: 6px 12px;
+      width: 100%;
+      background-color: transparent;
+      color: color(text-color);
+      border: 2px solid color(text-color);
+
+      &:hover {
+        background-color: color(text-color);
+        color: #fff;
+      }
+    }
+  }
+}

@@ -108,3 +108,51 @@
   }
 }
 
+.contactArea {
+  background-color: color(brown2);
+  padding: 15px;
+
+  .contactForm {
+    width: 100%;
+    padding: 10px;
+
+    label {
+      display: block;
+      width: 100%;
+
+      input {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .contactFormInput {
+    width: 100%;
+  }
+
+  .contactFormFooter input {
+    width: 100%;
+  }
+
+  .googleMap {
+    border: none;
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+  }
+
+  .githubLink {
+    color: color(text-color);
+
+    &:hover {
+      color: color(text-color);
+    }
+
+    i {
+      display: inline-block;
+      margin-left: 15px;
+      animation-duration: 9s;
+    }
+  }
+}
+
