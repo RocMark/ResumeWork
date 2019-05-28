@@ -1,0 +1,113 @@
+# CSS命名規則
+
+# mixin & extend 比較
+extend 用於合併程式碼 (Code長一模一樣)
+
+mixin  
+1. 幫助記憶程式片段，呼其名即可
+2. 可帶入變數
+3. 可配合media query
+
+* 注意 不要把 mixin 當 extend用
+會造成同片段，重複編譯，導致CSS暴肥
+
+```css
+  %circle { border-radius: 50%; }
+  .e-card-Img { @extend %circle; }
+```
+
+# BEM
+* Block__Element--Modifier
+
+## Block 在頁面上獨立存在可復用的元件
+如同 SMACSS 的 Module, Layout
+每個 Block 都是獨立存在的
+
+## Element (.button__icon 雙下底線)
+Block的一部份子元件
+無法獨立於 Block 之外
+
+## Modifier 
+用來定義 Block 或 Element 的狀態或屬性
+類似 SMACSS 的 State
+
+# OOCSS
+結構與外觀分離 Structure & Skin
+容器與內容分離 Container & Content
+
+# SMACSS
+* Decoupling CSS from HTML 分離 (重要!!)
+避免使用HTML結構去指定目標
+給與自訂義class保有彈性
+```css
+.media li a {}  (BAD)
+.media-link {}  (Better)
+```
+Naming rules 命名規則
+* Categorization 結構分類
+Base   /  CSS Reset/Normalize
+Layout /  Header/SideBar/Content
+Module /  Tabs/CustomizedList/Button
+State  /  default/active/disabled
+Theme  /  
+
+## Module (.mod-header / .mod-body)
+頁面可單獨存在 且 可重複使用的元件
+應避免使用 #id 或 tag 做為選擇器
+
+## State (.is-hidden / .is-error)
+與 Layout,Module搭配
+用以表示狀態變化
+
+## Theme (.theme-*)
+定義網站主視覺
+類似 Layout，但影響的是網站視覺的變化
+
+# figure & picture 用法整理
+picture 可用 source 根據viewport 載入不同圖片
+```html
+
+```
+
+# CSS 代碼性能優化
+1. margin/padding/border 盡量合併
+2. 盡可能減少選擇棄嵌套
+3. 不使用 * 
+4. border: none; 而非0
+5. background/font 能縮寫就縮寫
+6. 盡量不用 !important
+7. 背景圖 盡可能使用 sprite,減少http請求
+8. 
+
+# CSS 字型選擇
+* 字型屬性
+serif(襯線字)
+sans-serif(無襯線字)
+cursive(類手寫字)
+fantasy(裝飾字)
+monospace(等寬字)
+
+* font-family 使用對應英文名較佳
+雅黑 用於簡中較佳， 正黑則為繁中
+* sans-serif 為 無襯線的內建字型
+
+* 設定網頁字體時，會將「英文字體」在最前、MAC、Windows
+因中字通常「包含」英字，若中在前，則不繼續往下找了。
+
+* 使用 GoogleFonts 要注意大小、字重亦有差別，避免使用2套+
+```html
+  <style>
+    body {
+      /* 微軟雅黑(第一順), 正黑(二順), 預設 */
+      font-family: Microsoft JhengHei, Microsoft Yahei, sans-serif;
+      /* GoogleFont 思源黑體 */
+      font-family: 'Noto Sans TC', sans-serif;
+  }
+  </style>
+  <!-- 
+    可用 HTML Link 亦可用 SCSS Import方式
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional');
+   -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+```
+
