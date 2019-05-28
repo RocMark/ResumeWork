@@ -133,20 +133,27 @@
 
           <div id="b-array__table--processed"></div>
 
+          <!-- some -->
           <p class="b-array__bar d-block">
-            some()用法: Someone is at lest
-            <input class="b-array__input" type="number" value="20" id="">
-            ?<span class="ml-2">True</span>
+            some()用法: 至少有一人
+            <input id="b-array__input--some" class="b-array__input" type="number" max="123" value="20">
+            歲?<span id="b-array__ans--some" class="ml-2">true</span>
           </p>
+          <!-- every -->
           <p class="b-array__bar d-block">
-            every()用法: Everyone is above
-            <input class="b-array__input" type="number" value="100" id="">
-            ?<span class="ml-2">false</span>
+            every()用法: 所有人皆年長於<span id="b-array__range--value">80</span>歲?
+            <br>
+            <div class="b-array__range__block">
+              <input id="b-array__input--every" class="b-array__input" step="10" type="range" value="80">
+              <span id="b-array__ans--every" class="ml-2">false</span>
+            </div>
           </p>
+          <!-- findIndex -->
           <p class="b-array__bar d-block">
-            findIndex()用法: Someone is Call
-            <input id="" class="b-array__input" type="text" placeholder="Enter Name" maxlength="12"  value="EinsteinA">
-            ?<span class="ml-2">false</span>
+            findIndex()用法:last為
+            <input id="b-array__input--findIndex" class="b-array__input" type="text" placeholder="Enter Name"
+              maxlength="12" value="EinsteinA">
+            的Index為何?<span id="b-array__ans--findIndex" class="ml-2">0</span>
           </p>
 
           <div id="test"></div>
@@ -173,16 +180,55 @@
           <button class="b-console__btn--generate btn btn-info">Generate Console</button>
           <button class="b-console__btn--clear btn btn-dark">CleanUp Console</button>
         </div>
-
-
-
       </div>
 
+      <!-- 產品Form JS30實作 Day15  -->
+      <div class="p-js-work__area container mb-5">
+        <div class="p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">
+            Day15
+            <button class="btn btn-secondary">Hide</button>
+          </h2>
+          <p class="p-js-work__describe mb-3">
+            說明: localStorage 練習 (JS30)
+          </p>
+          <p class="p-js-work__describe mb-3">
+            <form id="b-locals__form" class="form mt-3 clearfix">
+              <div class="b-locals__input__form form-group">
+                <input type="hidden" class="b-locals__input" name="id">
+                <input type="text" name="title" class="b-locals__input form-control mb-3" placeholder="Title" value="東京晴空塔夜遊 TEST" required>
+                <!-- Tag地區 -->
+                <div class="form-group mb-3">
+                  <label for="b-locals__select">地區</label>
+                  <select id="b-locals__select" class="form-control">
+                    <option hidden disabled value>選擇地區</option>
+                    <option value="關西" selected>關西</option>
+                    <option value="關東">關東</option>
+                  </select>
+                </div>
+                <!-- Price -->
+                <label>
+                  <span>設定價錢</span><br>
+                  <input class="b-locals__input form-control mb-3" type="number" name="price" value="2800">
+                </label>
+                <!-- URL圖片 -->
+                <label>
+                  <span>範例圖片url</span><br>
+                  <input class="b-locals__input form-control mb-3" type="url" max="123" name="url" value="https://bit.ly/2VZ2HTo" readonly>
+                </label>
+                <img class="img-fluid mb-3" width="100" height="100" src="https://bit.ly/2VZ2HTo" alt="">
+                <textarea class="b-locals__textarea form-control mb-3" rows="5" placeholder="Content" required>東京晴空塔，又譯稱東京天空樹、新東京鐵塔。</textarea>
+                <input class="btn btn-primary float-right" type="submit" value="Submit">
+              </div>
+            </form>
+          </p>
+        </div>
+      </div>
 
-
-      <!-- 產品列表 -->
+      <!-- 購物車頁 -->
       <div class="productArea container-fluid">
         <div class="row">
+          <!-- 側邊欄 -->
           <div class="col-xs-12 col-sm-3">
             <ul class="productTab">
               <span class="productSlogan">
@@ -197,6 +243,7 @@
           </div>
 
           <div class="col-xs-12 col-sm-9">
+            <!-- 搜尋Bar -->
             <div class="productHeader mb-5">
               <div class="productSearchBar">
                 <input maxlength="10" type="text" placeholder="搜尋地點...">
@@ -213,74 +260,8 @@
                 購物車
               </button>
             </div>
-
-            <div class="row productList">
-
-              <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top"
-                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                  alt="productImg">
-                <span class="productTag east">關西</span>
-                <div class="productBody card-body">
-                  <h5 class="card-title">京都清水寺一日遊</h5>
-                  <p>清水寺是京都最古老的寺。</p>
-                  <hr>
-                  <span class="productPrice mb-3">$1200</span>
-                  <button class="productBtn btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    加入購物車
-                  </button>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top"
-                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                  alt="productImg">
-                <span class="productTag east">關西</span>
-                <div class="productBody card-body">
-                  <h5 class="card-title">京都清水寺一日遊</h5>
-                  <p>清水寺是京都最古老的寺。</p>
-                  <hr>
-                  <span class="productPrice mb-3">$1200</span>
-                  <button class="productBtn btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    加入購物車
-                  </button>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top"
-                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                  alt="productImg">
-                <span class="productTag east">關西</span>
-                <div class="productBody card-body">
-                  <h5 class="card-title">京都清水寺一日遊</h5>
-                  <p>清水寺是京都最古老的寺。</p>
-                  <hr>
-                  <span class="productPrice mb-3">$1200</span>
-                  <button class="productBtn btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    加入購物車
-                  </button>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top"
-                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                  alt="productImg">
-                <span class="productTag east">關西</span>
-                <div class="productBody card-body">
-                  <h5 class="card-title">京都清水寺一日遊</h5>
-                  <p>清水寺是京都最古老的寺。</p>
-                  <hr>
-                  <span class="productPrice mb-3">$1200</span>
-                  <button class="productBtn btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    加入購物車
-                  </button>
-                </div>
-              </div>
-
+            <!-- 產品列表 -->
+            <div id="b-locals__item__list" class="row productList">
             </div>
           </div>
         </div>

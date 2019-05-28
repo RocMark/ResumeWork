@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
     /* Day1 DrumKit */
@@ -21,6 +20,13 @@
         originDataDOM: document.querySelector('#b-array__table--origin'),
         processedDataDOM: document.querySelector('#b-array__table--processed'),
         btnParent: document.querySelector('.b-array__btns'),
+        someInput: document.querySelector('#b-array__input--some'),
+        someAns: document.querySelector('#b-array__ans--some'),
+        everyInput: document.querySelector('#b-array__input--every'),
+        everyAns: document.querySelector('#b-array__ans--every'),
+        everyVal: document.querySelector('#b-array__range--value'),
+        findIndexInput: document.querySelector('#b-array__input--findIndex'),
+        findIndexAns: document.querySelector('#b-array__ans--findIndex'),
       },
       describe: {
         filter: "篩選出誰生於1500's",
@@ -62,7 +68,18 @@
       ],
       // 掛載監聽 & Render 原始資料
       init() {
+        // 事件代理
         this.dom.btnParent.addEventListener('click', this.createTable)
+
+        // some掛載事件
+        this.dom.someInput.addEventListener('change', this.someInputFunc)
+        this.dom.someInput.addEventListener('keyup', this.someInputFunc)
+        // every掛載事件
+        this.dom.everyInput.addEventListener('change', this.everyInputFunc)
+        this.dom.everyInput.addEventListener('input', this.everyInputFunc)
+        // findIndex掛載事件
+        this.dom.findIndexInput.addEventListener('change', this.findIndexInputFunc)
+        this.dom.findIndexInput.addEventListener('input', this.findIndexInputFunc)
         
         this.renderData(
           arrayCardio.dom.originDataDOM,
@@ -193,6 +210,38 @@
         `
         target.innerHTML = markup
       },
+      someInputFunc(e) {
+        let inputAge = e.target.value
+        let someTest = function (elem) { 
+          let age = elem.passed - elem.birth
+          return (age >= inputAge)
+        }
+        
+        let result = arrayCardio.processedData().some(someTest)
+        arrayCardio.dom.someAns.textContent = result
+      },
+      everyInputFunc(e) {
+        let val = e.target.value
+        arrayCardio.dom.everyVal.textContent = val
+        let result = arrayCardio.processedData().every((elem) => {
+          let age = elem.passed - elem.birth
+          return (age >= val)
+        })
+        arrayCardio.dom.everyAns.textContent = result
+      },
+      findIndexInputFunc(e) {
+        let name = e.target.value
+        if (!name) {
+          arrayCardio.dom.findIndexAns.textContent = '不可為空'
+        } else {
+          let result = arrayCardio.processedData().findIndex(elem => elem.last === name)
+          if (result < 0) {
+            arrayCardio.dom.findIndexAns.textContent = '查無此人'
+          } else {
+            arrayCardio.dom.findIndexAns.textContent = result
+          }
+        }
+      },
     }
     arrayCardio.init()
 
@@ -270,6 +319,178 @@
     /* Day13 Slide in on Scroll */
     /* Day14 JavaScript References VS Copying */
     /* Day15 LocalStorage */
+
+    const myLocalStorage = {
+      dom: {
+        itemList: document.querySelector('#b-locals__item__list'),
+        form: document.querySelector('#b-locals__form'),
+        id: document.querySelector('.b-locals__input[name="id"]'),
+        title: document.querySelector('.b-locals__input[name="title"]'),
+        tag: document.querySelector('#b-locals__select'),
+        price: document.querySelector('.b-locals__input[name="price"]'),
+        describe: document.querySelector('.b-locals__textarea'),
+        url: document.querySelector('.b-locals__input[name="url"]'),
+      },
+      testData: [
+        {
+          id: 1,
+          title: '京都清水寺一日遊 A',
+          tag: '關西',
+          price: '1200',
+          describe: '清水寺是京都最古老的寺。',
+          url: 'https://bit.ly/2KcGi2D',
+        },
+        {
+          id: 2,
+          title: '京都清水寺一日遊 B',
+          tag: '關西',
+          price: '1200',
+          describe: '清水寺是京都最古老的寺。',
+          url: 'https://bit.ly/2KcGi2D',
+        },
+        {
+          id: 3,
+          title: '東京晴空塔夜遊 A',
+          tag: '關東',
+          price: '2800',
+          describe: '東京晴空塔，又譯稱東京天空樹、新東京鐵塔。',
+          url: 'https://bit.ly/2VZ2HTo',
+        },
+        {
+          id: 4,
+          title: '東京晴空塔夜遊 B',
+          tag: '關東',
+          price: '2800',
+          describe: '東京晴空塔，又譯稱東京天空樹、新東京鐵塔。',
+          url: 'https://bit.ly/2VZ2HTo',
+        },
+      ],
+      newData: [
+        {
+          id: 1,
+          title: '京都清水寺一日遊 A',
+          tag: '關西',
+          price: '1200',
+          describe: '清水寺是京都最古老的寺。',
+          url: 'https://bit.ly/2KcGi2D',
+        },
+        {
+          id: 2,
+          title: '京都清水寺一日遊 B',
+          tag: '關西',
+          price: '1200',
+          describe: '清水寺是京都最古老的寺。',
+          url: 'https://bit.ly/2KcGi2D',
+        },
+        {
+          id: 3,
+          title: '東京晴空塔夜遊 A',
+          tag: '關東',
+          price: '2800',
+          describe: '東京晴空塔，又譯稱東京天空樹、新東京鐵塔。',
+          url: 'https://bit.ly/2VZ2HTo',
+        },
+        {
+          id: 4,
+          title: '東京晴空塔夜遊 B',
+          tag: '關東',
+          price: '2800',
+          describe: '東京晴空塔，又譯稱東京天空樹、新東京鐵塔。',
+          url: 'https://bit.ly/2VZ2HTo',
+        },
+      ],
+      init() {
+        myLocalStorage.addOriginData()
+        myLocalStorage.renderOriginData()
+        myLocalStorage.dom.form.addEventListener('submit', myLocalStorage.submitData)
+      },
+      renderOriginData() {
+        let newData = myLocalStorage.currentData()
+        let result = ''
+        newData.forEach((el) => {
+          let tpl = `
+            <div data-itemId="${el.id}" class="col-12 col-sm-6 col-md-4 product mb-3">
+              <img class="card-img-top" src="${el.url}" alt="productImg">
+              <span class="productTag east">${el.tag}</span>
+              <div class="productBody card-body">
+                <h5 class="card-title">${el.title}</h5>
+                <p>${el.describe}</p>
+                <hr>
+                <span class="productPrice mb-3">$${el.price}</span>
+                <button class="productBtn btn">
+                  <i class="fas fa-shopping-cart"></i>
+                  加入購物車
+                </button>
+              </div>
+            </div>
+          `
+          result += tpl
+        })
+        myLocalStorage.dom.itemList.innerHTML += result
+      },
+      addOriginData() {
+        localStorage.setItem('cartData', JSON.stringify(this.testData))
+      },
+      currentData() {
+        if (!localStorage.getItem('cartData')) {
+          localStorage.setItem('cartData', JSON.stringify(this.testData))
+        }
+        return JSON.parse(localStorage.getItem('cartData'))
+      },
+      getFormData() {
+        return {
+          id: this.testData.length + 1,
+          title: this.dom.title.value,
+          tag: this.dom.tag.value,
+          price: this.dom.price.value,
+          describe: this.dom.describe.value,
+          url: this.dom.url.value,
+        }
+      },
+      // submit事件
+      submitData(e) {
+        e.preventDefault()
+        myLocalStorage.newData.push(myLocalStorage.getFormData())
+        localStorage.setItem('cartData', JSON.stringify(myLocalStorage.newData))
+        myLocalStorage.renderList()
+        console.table(myLocalStorage.currentData())
+      },
+      // 渲染表單
+      renderList() {
+        let el = myLocalStorage.getFormData()
+        let tplStr = `
+            <div data-itemId="${el.id}" class="col-12 col-sm-6 col-md-4 product mb-3">
+              <img class="card-img-top" src="${el.url}" alt="productImg">
+              <span class="productTag east">${el.tag}</span>
+              <div class="productBody card-body">
+                <h5 class="card-title">${el.title}</h5>
+                <p>${el.describe}</p>
+                <hr>
+                <span class="productPrice mb-3">$${el.price}</span>
+                <button class="productBtn btn">
+                  <i class="fas fa-shopping-cart"></i>
+                  加入購物車
+                </button>
+              </div>
+            </div>
+          `
+        myLocalStorage.dom.itemList.innerHTML += tplStr
+      },
+      getCompiledData() {
+        return JSON.parse(localStorage.getItem('cartData'))
+      },
+      resetCartData() {
+        localStorage.removeItem('cartData')
+        // clear() 則是刪除整個localStorage資料
+        // localStorage.clear()
+      },
+    }
+    myLocalStorage.init()
+
+
+
+
+
     /* Day16 Mouse Move Shadow */
     /* Day17 Sort Without Articles */
     /* Day18 Adding Up Times with Reduce */

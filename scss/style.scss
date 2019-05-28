@@ -59,30 +59,37 @@
       text-align: center;
     }
   }
-}
-
-.b-array__bar {
-  padding: 10px 0;
-  .b-array__input {
-    padding: 3px;
-    &[type=text]{
-      padding: 10px;
-      width: 120px;
+  .b-array__bar {
+    padding: 10px 0;
+    .b-array__input {
+      padding: 3px;
+      &[type=text]{
+        padding: 10px;
+        width: 120px;
+        margin: 10px 0;
+      }
+      &[type=number]{
+        width: 57px;
+      }
+      &[type=number]::-webkit-inner-spin-button, 
+      &[type=number]::-webkit-outer-spin-button {  
+        opacity: 1;
+      }
     }
-    &[type=number]{
-      width: 57px;
-    }
-    &[type=number]::-webkit-inner-spin-button, 
-    &[type=number]::-webkit-outer-spin-button {  
-      opacity: 1;
+    span {
+      font-weight: bold;
     }
   }
-  span {
+  
+  .b-array__range__block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  #b-array__ans--every {
     font-weight: bold;
   }
 }
-
-// 
 
 
 // media
