@@ -83,16 +83,17 @@
       </div>
 
       <!-- workArea -->
-      
+
       <div class="p-js-work__area container mb-5">
-        <!-- <h1>JS30實作</h1> -->
+
+        <!-- JS30實作 Day1 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-1">Day1 Drum Kit</h2>
+          <h2 class="p-js-work__title mb-2">Day1 Drum Kit</h2>
           <p class="p-js-work__describe mb-2">
             說明: 按下鍵盤相應鍵位，產生音效
           </p>
           <p class="p-js-work__describe mb-3">
-            學習重點:  JS配合CSS3動畫、audio Tag使用
+            學習重點: JS配合CSS3動畫、audio Tag使用
           </p>
 
           <div class="b-keys">
@@ -114,25 +115,58 @@
           <audio data-key="76" src="./sounds/tink.wav"></audio>
         </div>
 
+        <!-- JS30實作 Day4 & Day7 -->
+        <div class="p-array-cardio p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">Day4 & Day7 Array Cardio </h2>
+          <p class="p-js-work__describe mb-3">
+            學習重點: Array方法整理、事件代理、DOM產生&操作
+          </p>
+
+          <div id="b-array__table--origin"></div>
+
+          <div class="b-array__btns mb-3">
+            <button data-func="filter" id="b-array__btn--filter" class="btn btn-dark">Filter</button>
+            <button data-func="sortAge" id="b-array__btn--sort" class="btn btn-dark">Sort</button>
+            <button data-func="sortAlpha" id="b-array__btn--sortAlpha" class="btn btn-dark">SortAlpha</button>
+            <button data-func="find" id="b-array__btn--find" class="btn btn-dark">Find</button>
+          </div>
+
+          <div id="b-array__table--processed"></div>
+
+          <p class="b-array__bar d-block">
+            some()用法: Someone is at lest
+            <input class="b-array__input" type="number" value="20" id="">
+            ?<span class="ml-2">True</span>
+          </p>
+          <p class="b-array__bar d-block">
+            every()用法: Everyone is above
+            <input class="b-array__input" type="number" value="100" id="">
+            ?<span class="ml-2">false</span>
+          </p>
+          <p class="b-array__bar d-block">
+            findIndex()用法: Someone is Call
+            <input id="" class="b-array__input" type="text" placeholder="Enter Name" maxlength="12"  value="EinsteinA">
+            ?<span class="ml-2">false</span>
+          </p>
+
+          <div id="test"></div>
+
+        </div>
+
+        <!-- JS30實作 備用 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-1">Day9 </h2>
+          <h2 class="p-js-work__title mb-2">備用</h2>
           <p class="p-js-work__describe mb-3">
             說明: console 相關用法練習
           </p>
           <p class="p-js-work__describe mb-3">
-            學習重點:  JS配合CSS3動畫、audio Tag使用
+            學習重點: JS配合CSS3動畫、audio Tag使用
           </p>
         </div>
 
+        <!-- JS30實作 Day9 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-1">Day9 </h2>
-          <p class="p-js-work__describe mb-3">
-            說明: console 相關用法練習
-          </p>
-        </div>
-
-        <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-1">Day9 </h2>
+          <h2 class="p-js-work__title mb-2">Day9 </h2>
           <p class="p-js-work__describe mb-3">
             說明: console 相關用法練習
           </p>
@@ -140,11 +174,11 @@
           <button class="b-console__btn--clear btn btn-dark">CleanUp Console</button>
         </div>
 
-        
+
 
       </div>
 
-      
+
 
       <!-- 產品列表 -->
       <div class="productArea container-fluid">
@@ -183,7 +217,9 @@
             <div class="row productList">
 
               <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="productImg">
+                <img class="card-img-top"
+                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="productImg">
                 <span class="productTag east">關西</span>
                 <div class="productBody card-body">
                   <h5 class="card-title">京都清水寺一日遊</h5>
@@ -197,7 +233,9 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="productImg">
+                <img class="card-img-top"
+                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="productImg">
                 <span class="productTag east">關西</span>
                 <div class="productBody card-body">
                   <h5 class="card-title">京都清水寺一日遊</h5>
@@ -211,7 +249,9 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="productImg">
+                <img class="card-img-top"
+                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="productImg">
                 <span class="productTag east">關西</span>
                 <div class="productBody card-body">
                   <h5 class="card-title">京都清水寺一日遊</h5>
@@ -225,7 +265,9 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 product mb-3">
-                <img class="card-img-top" src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="productImg">
+                <img class="card-img-top"
+                  src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                  alt="productImg">
                 <span class="productTag east">關西</span>
                 <div class="productBody card-body">
                   <h5 class="card-title">京都清水寺一日遊</h5>

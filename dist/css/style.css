@@ -991,3 +991,32 @@ body {
   padding: 20px;
   border-bottom: 0.5px solid brown;
 }
+
+.p-array-cardio .b-array__table tbody, .p-array-cardio .b-array__table th, .p-array-cardio .b-array__table td {
+  text-align: center;
+}
+
+.b-array__bar {
+  padding: 10px 0;
+}
+
+.b-array__bar .b-array__input {
+  padding: 3px;
+}
+
+.b-array__bar .b-array__input[type=text] {
+  padding: 10px;
+  width: 120px;
+}
+
+.b-array__bar .b-array__input[type=number] {
+  width: 57px;
+}
+
+.b-array__bar .b-array__input[type=number]::-webkit-inner-spin-button, .b-array__bar .b-array__input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.b-array__bar span {
+  font-weight: bold;
+}
