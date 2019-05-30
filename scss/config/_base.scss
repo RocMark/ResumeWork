@@ -29,6 +29,7 @@ textarea {
 }
 
 input {
+  padding: 8px 16px;
   &[type='button'] , &[type='reset'] , &[type='submit'] , {
     padding: 8px 16px;
     cursor: pointer;
@@ -37,8 +38,14 @@ input {
   &:focus {
     outline: none;
   }
+
 }
 
 button {
   cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+  opacity: 1;
 }

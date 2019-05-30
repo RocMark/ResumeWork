@@ -14,8 +14,9 @@
       keyPressed(e) {
         const pressedKey = e.keyCode
         let target = document.querySelector(`.b-key[data-key="${pressedKey}"]`)
+        // 播放音效
         drum.playSound(pressedKey)
-        // drum.playSound()
+        // 控制動畫
         if (target) {
           if (target.classList.contains('animated')) {
             target.classList.remove('heartBeat')
@@ -27,24 +28,120 @@
         }
       },
       playSound(key) {
-        const audioArr = [...drum.dom.audios.children]
-        // el.dataset.key 回傳為字串.. 被捅了一刀
-        const targetAudioArr = audioArr.filter(el => +(el.dataset.key) === key)
-        if (targetAudioArr.length !== 0) {
-          targetAudioArr[0].currentTime = 0
-          targetAudioArr[0].play()
+        // 改寫後
+        const targetAudio = document.querySelector(`audio[data-key="${key}"]`)
+        if (targetAudio) {
+          targetAudio.currentTime = 0
+          targetAudio.play()
         }
+
+        // 最初的寫法
+        // const audioArr = [...drum.dom.audios.children]
+        // el.dataset.key 回傳為字串.. 被捅了一刀
+        // const targetAudioArr = audioArr.filter(el => +(el.dataset.key) === key)
+        // if (targetAudioArr.length !== 0) {
+        // targetAudioArr[0].currentTime = 0
+        // targetAudioArr[0].play()
+        // }
       },
     }
-
 
     /* Day2 JS & CSS Clock */
     /* Day29 Countdown Timer */
     // Clock先不刻，先能做個電子鐘就行
+    const clock = {
+      dom: {
+        // 設定時間的Form
+        timeSetForm: document.querySelector('#b-clock__form'),
+        // 倒數時間展示
+        displayTimeText: document.querySelector('.b-clock__display--text'),
+        // 設定倒數時間DOM
+        setHourInput: document.querySelector('#b-clock__form input[name="hour"]'),
+        setMinInput: document.querySelector('#b-clock__form input[name="min"]'),
+        setSecInput: document.querySelector('#b-clock__form input[name="sec"]'),
+        // 倒數控制DOM
+        startCountDownBtn: document.querySelector('.b-clock__display--start'),
+        stopCountDownBtn: document.querySelector('.b-clock__display--stop'),
+      },
+      init() {
+        // 倒數計時設定Form
+        clock.dom.timeSetForm.addEventListener('submit', clock.setTime)
+        // 倒數計時 開始和暫停按鈕
+        clock.dom.stopCountDownBtn.addEventListener('click', clock.stopCountDown)
+        clock.dom.startCountDownBtn.addEventListener('click', clock.startCountDown)
+      },
+      // 紀錄當前倒數時間
+      tmpTime: 0,
+      pauseClock: false,
+      // 設置倒數時間
+      setTime(e) {
+        clock.pauseClock = true
+        e.preventDefault()
+        clock.renderClock(clock.getSetTime().tplStr)
+      },
+      // 取得設置的倒數時間
+      getSetTime() {
+        // 轉換前 加總在重新輸出
+        const hour = this.dom.setHourInput.value
+        const min = this.dom.setMinInput.value
+        const sec = this.dom.setSecInput.value
+        const addUpTime = ((+hour) * 3600) + ((+min) * 60) + (+sec)
+        // 轉換後
+        let convertedTime = this.convertTime(addUpTime)
+        clock.tmpTime = addUpTime
+        return {
+          h: convertedTime.h,
+          m: convertedTime.m,
+          s: convertedTime.s,
+          tplStr: convertedTime.tplStr,
+          addUpTime,
+        }
+      },
+      // 渲染時鐘
+      renderClock(data) {
+        this.dom.displayTimeText.textContent = data
+      },
+      // 把秒轉換成 h m s
+      convertTime(time) {
+        let h = Math.floor(time / 3600)
+        let m = Math.floor((time % 3600) / 60)
+        let s = Math.floor((time % 3600) % 60)
+        let tplStr = `${h}小時${m}分鐘${s}秒`
+        return {
+          h, m, s, tplStr: tplStr.trim(),
+        }
+      },
+      // 開始倒數 setInterVal
+      startCountDown() {
+        clock.pauseClock = false
+
+        // 取得設置的時間
+        // clock.tmpTime = +(clock.getSetTime().addUpTime)
+
+        let timer = setInterval(() => {
+          clock.tmpTime -= 1
+          //* 可以從內部呼叫 clearInterval
+          if (clock.tmpTime === 0) clearInterval(timer)
+          if (clock.pauseClock) clearInterval(timer)
+          console.log(clock.tmpTime)
+
+          let convertedTime = clock.convertTime(clock.tmpTime)
+          clock.renderClock(convertedTime.tplStr)
+        }, 1000)
+        // setInterval(clock.renderClock(time - 1), 1000)
+      },
+      // 暫停倒數 setInterVal
+      stopCountDown() {
+        clock.pauseClock = true
+        console.log(clock.tmpTime)
+        // clearInterval(clock.startCountDown())
+      },
+    }
+    clock.init()
+
 
     /* Day4 & Day7 Array Cardio */
-    /* Day6 TypeAhead */
-    // 購物車搜尋欄
+    /* Day6 TypeAhead 購物車搜尋欄*/
     const arrayCardio = {
       dom: {
         originDataDOM: document.querySelector('#b-array__table--origin'),
@@ -329,7 +426,6 @@
       },
     }
 
-
     /* Day12 Key Sequence Detection */
     // 這個不難可以先做
 
@@ -569,19 +665,21 @@
       },
     }
 
-    const currentPage = window.location.href
-    
-    // cart頁才啟動
-    if (currentPage.includes('cart')) {
-      myLocalStorage.init()
+    /* 偵測當前分頁 啟動相應JS */
+    const runDetect = function () {
+      const currentPage = window.location.href
+      // cart頁才啟動
+      if (currentPage.includes('cart')) {
+        myLocalStorage.init()
+      }
+      // JS30 頁才啟動
+      if (currentPage.includes('js30')) {
+        drum.init()
+        arrayCardio.init()
+        myConsole.init()
+      }
     }
-    // JS30 頁才啟動
-    if (currentPage.includes('js30')) {
-      drum.init()
-      arrayCardio.init()
-      myConsole.init()
-    }
-    
+    runDetect()
 
   })
 }())

@@ -121,6 +121,33 @@
           </div>
         </div>
 
+        <!-- JS30實作 Day2 & Day9 Clock-->
+        <div class="p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">Day2 & Day9 Clock</h2>
+          <p class="p-js-work__describe mb-3">
+            學習重點: JS時間處理、setInterval用法
+            <a class="btn btn-dark ml-4" href="javascript:;">文章連結</a>
+          </p>
+          <form id="b-clock__form" class="form mb-3 clearfix">
+            <input type="number" value="0" name="hour" placeholder="小時" max="999" min="0">
+            <span>小時</span>
+            <input type="number" max="999" min="0" value="0"  name="min" placeholder="分鐘">
+            <span>分鐘</span>
+            <input type="number" max="999" min="0" value="5" name="sec" placeholder="秒">
+            <span>秒</span>
+            <input class="btn btn-primary" type="submit" value="Set">
+            <input class="b-clock__form--clear btn btn-dark" type="reset" value="Reset">
+          </form>
+          <p class="b-clock__display">
+            <div class="b-clock__display--inline">
+              <p class="">剩餘時間還有:</p>
+              <p class="b-clock__display--text">00小時00分鐘00秒</p>
+              <button class="b-clock__display--start btn btn-success mr-2">Start</button>
+              <button class="b-clock__display--stop btn btn-danger mr-2">Stop</button>
+            </div>
+          </p>
+        </div>
+
         <!-- JS30實作 Day4 & Day7 -->
         <div class="p-array-cardio p-js-work__block mb-5">
           <h2 class="p-js-work__title mb-2">Day4 & Day7 Array Cardio </h2>
@@ -186,6 +213,7 @@
             學習重點: JS配合CSS3動畫、audio Tag使用
           </p>
         </div>
+
       </div>
 
       <!-- 頁尾 -->
