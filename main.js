@@ -29,10 +29,11 @@
       playSound(key) {
         const audioArr = [...drum.dom.audios.children]
         // el.dataset.key 回傳為字串.. 被捅了一刀
-        const targetAudio = audioArr.filter(el => +(el.dataset.key) === key)[0]
-        // targetAudio.currentTime = 0
-        targetAudio.currentTime = 0
-        targetAudio.play()
+        const targetAudioArr = audioArr.filter(el => +(el.dataset.key) === key)
+        if (targetAudioArr.length !== 0) {
+          targetAudioArr[0].currentTime = 0
+          targetAudioArr[0].play()
+        }
       },
     }
 
