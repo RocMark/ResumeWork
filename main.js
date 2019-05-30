@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
+
     /* Day1 DrumKit */
     // window.addEventListener('keydown', keyBoxEvent)
     function keyBoxEvent(e) {
@@ -11,10 +12,12 @@
     }
 
     /* Day2 JS & CSS Clock */
-
-    /* Day3 CSS Variable */
+    /* Day29 Countdown Timer */
+    // Clock先不刻，先能做個電子鐘就行
 
     /* Day4 & Day7 Array Cardio */
+    /* Day6 TypeAhead */
+    // 購物車搜尋欄
     const arrayCardio = {
       dom: {
         originDataDOM: document.querySelector('#b-array__table--origin'),
@@ -245,11 +248,6 @@
     }
     arrayCardio.init()
 
-    /* Day5 Flex Panel Gallery */
-
-    /* Day6 TypeAhead */
-
-    /* Day8 HTML Canvas */
 
     /* Day9 DevToolsDomination */
     const myConsole = {
@@ -308,18 +306,13 @@
     }
     myConsole.init()
 
-
-
-    /* Day10 Hold Shift and Check Checkboxes */
-
-    /* Day11 Custom Video Player */
-    /* Day28 Video Speed Controller */
-
     /* Day12 Key Sequence Detection */
-    /* Day13 Slide in on Scroll */
-    /* Day14 JavaScript References VS Copying */
-    /* Day15 LocalStorage */
+    // 這個不難可以先做
 
+    /* Day13 Slide in on Scroll */
+    // 做首頁區塊 點擊滑至該區 & 滑入動畫
+
+    /* Day15 LocalStorage */
     const myLocalStorage = {
       dom: {
         itemList: document.querySelector('#b-locals__item__list'),
@@ -330,6 +323,9 @@
         price: document.querySelector('.b-locals__input[name="price"]'),
         describe: document.querySelector('.b-locals__textarea'),
         url: document.querySelector('.b-locals__input[name="url"]'),
+        searchBar: document.querySelector('#b-locals__search'),
+        searchBtn: document.querySelector('#b-locals__search--send'),
+        listTab: document.querySelector('.b-locals__tab__list'),
       },
       testData: [
         {
@@ -400,33 +396,99 @@
         },
       ],
       init() {
-        myLocalStorage.addOriginData()
-        myLocalStorage.renderOriginData()
-        myLocalStorage.dom.form.addEventListener('submit', myLocalStorage.submitData)
+        // 資料加入 localStorage & 渲染原始資料/Tab
+        this.addOriginData()
+        this.renderDataList(this.currentData())
+        this.renderListTab()
+
+        // 掛載新增購物清單DOM
+        this.dom.form.addEventListener('submit', this.submitData)
+
+        // 搜尋欄
+        this.dom.searchBar.addEventListener('keyup', this.renderNewData)
+        this.dom.searchBtn.addEventListener('click', this.renderNewData)
+
+        // 側邊欄Tab
+        this.dom.listTab.addEventListener('click', this.tabSwitchDataListener)
       },
-      renderOriginData() {
-        let newData = myLocalStorage.currentData()
+      // 渲染 ListTab
+      renderListTab() {
+        let parent = this.dom.listTab
+        // let tagType = e.target.children[0].dataset.area
+        let westCount = myLocalStorage.currentData().filter(el => el.tag === '關西').length
+        let eastCount = myLocalStorage.currentData().filter(el => el.tag === '關東').length
+        // console.log('西', westCount, '東', eastCount, 'all', westCount + eastCount)
+        
+        // all Tab 更改文字內容
+        parent.children[1].children[0].textContent = westCount + eastCount
+        // 關東 Tab 更改文字內容
+        parent.children[2].children[0].textContent = eastCount
+        // 關西 Tab 更改文字內容
+        parent.children[3].children[0].textContent = westCount
+      },
+      // Tab 更換清單內容的監聽
+      tabSwitchDataListener(e) {
+        const tagName = e.target.tagName.toLowerCase()
+        const dataType = e.target.children[0].dataset.area
+        if (tagName === 'li') {
+          myLocalStorage.filterItem(dataType)
+        }
+        myLocalStorage.dom.searchBar.value = ''
+      },
+      // 更換清單內容
+      filterItem(str) {
+        switch (str) {
+          case 'all':
+            this.renderDataList(this.currentData())
+            break
+          case '關西':
+          case '關東':
+            this.renderDataList(this.currentData().filter(el => el.tag === str))
+            break
+          case '':
+            this.renderDataList(this.currentData())
+            break
+          default:
+            this.renderDataList(this.currentData().filter(el => el.title.includes(str)))
+            break
+        }
+      },
+      //? 搜尋功能 待做
+      renderNewData(e) {
+        const inputVal = myLocalStorage.dom.searchBar.value.trim()
+        console.log(inputVal)
+        const tagName = e.target.tagName.toLowerCase()
+        myLocalStorage.filterItem(inputVal)
+      },
+      // 代入資料 渲染購物清單
+      renderDataList(data) {
         let result = ''
-        newData.forEach((el) => {
-          let tpl = `
-            <div data-itemId="${el.id}" class="col-12 col-sm-6 col-md-4 product mb-3">
-              <img class="card-img-top" src="${el.url}" alt="productImg">
-              <span class="productTag east">${el.tag}</span>
-              <div class="productBody card-body">
-                <h5 class="card-title">${el.title}</h5>
-                <p>${el.describe}</p>
-                <hr>
-                <span class="productPrice mb-3">$${el.price}</span>
-                <button class="productBtn btn">
-                  <i class="fas fa-shopping-cart"></i>
-                  加入購物車
-                </button>
-              </div>
-            </div>
+        if (data.length === 0) {
+          result = `
+            <h4 class="d-block ml-3">查無關鍵字<h4/>
           `
-          result += tpl
-        })
-        myLocalStorage.dom.itemList.innerHTML += result
+        } else {
+          data.forEach((el) => {
+            let tpl = `
+              <div data-itemId="${el.id}" class="col-12 col-sm-6 col-md-4 product mb-3">
+                <img class="card-img-top" src="${el.url}" alt="productImg">
+                <span class="productTag east">${el.tag}</span>
+                <div class="productBody card-body">
+                  <h5 class="card-title">${el.title}</h5>
+                  <p>${el.describe}</p>
+                  <hr>
+                  <span class="productPrice mb-3">$${el.price}</span>
+                  <button class="productBtn btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    加入購物車
+                  </button>
+                </div>
+              </div>
+            `
+            result += tpl
+          })
+        }
+        myLocalStorage.dom.itemList.innerHTML = result
       },
       addOriginData() {
         localStorage.setItem('cartData', JSON.stringify(this.testData))
@@ -453,7 +515,8 @@
         myLocalStorage.newData.push(myLocalStorage.getFormData())
         localStorage.setItem('cartData', JSON.stringify(myLocalStorage.newData))
         myLocalStorage.renderList()
-        console.table(myLocalStorage.currentData())
+        // console.table(myLocalStorage.currentData())
+        myLocalStorage.renderListTab()
       },
       // 渲染表單
       renderList() {
@@ -476,9 +539,7 @@
           `
         myLocalStorage.dom.itemList.innerHTML += tplStr
       },
-      getCompiledData() {
-        return JSON.parse(localStorage.getItem('cartData'))
-      },
+      // 清除localStorage
       resetCartData() {
         localStorage.removeItem('cartData')
         // clear() 則是刪除整個localStorage資料
@@ -487,23 +548,5 @@
     }
     myLocalStorage.init()
 
-
-
-
-
-    /* Day16 Mouse Move Shadow */
-    /* Day17 Sort Without Articles */
-    /* Day18 Adding Up Times with Reduce */
-    /* Day19 Webcam Fun */
-    /* Day20 Speech Detection */
-    /* Day21 Geolocation */
-    /* Day22 Follow Along Link Highlighter */
-    /* Day23 Speech Synthesis */
-    /* Day24 Sticky Nav */
-    /* Day25 Event Capture, Propagation, Bubbling and Once */
-    /* Day26 Stripe Follow Along Nav */
-    /* Day27 Click and Drag */
-    /* Day29 Countdown Timer */
-    /* Day30 Whack A Mole */
   })
 }())
