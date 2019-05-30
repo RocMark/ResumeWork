@@ -246,9 +246,6 @@
         }
       },
     }
-    arrayCardio.init()
-
-
     /* Day9 DevToolsDomination */
     const myConsole = {
       consoleGenBtn: document.querySelector('.b-console__btn--generate'),
@@ -304,7 +301,7 @@
           })
       },
     }
-    myConsole.init()
+
 
     /* Day12 Key Sequence Detection */
     // 這個不難可以先做
@@ -453,11 +450,9 @@
             break
         }
       },
-      //? 搜尋功能 待做
-      renderNewData(e) {
+      renderNewData() {
         const inputVal = myLocalStorage.dom.searchBar.value.trim()
         console.log(inputVal)
-        const tagName = e.target.tagName.toLowerCase()
         myLocalStorage.filterItem(inputVal)
       },
       // 代入資料 渲染購物清單
@@ -546,7 +541,19 @@
         // localStorage.clear()
       },
     }
-    myLocalStorage.init()
+
+    const currentPage = window.location.href
+    
+    // cart頁才啟動
+    if (currentPage.includes('cart')) {
+      myLocalStorage.init()
+    }
+    // JS30 頁才啟動
+    if (currentPage.includes('js30')) {
+      arrayCardio.init()
+      myConsole.init()
+    }
+    
 
   })
 }())

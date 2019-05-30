@@ -22,6 +22,7 @@ Ex: ESLint,ChromeDev
 ## Preview
 
 ![網站首頁](https://i.imgur.com/C75MVuS.png)
-<!-- ![購物清單]() -->
+
+![購物清單](https://i.imgur.com/6fBWjuy.png)
 <!-- ![JS30]() -->
 <!-- ![個人履歷]() -->

@@ -40,7 +40,7 @@
         <nav class="siteNav navbar navbar-expand-md navbar-dark">
           <h3 class="d-none">導覽列</h3>
           <a class="navbar-brand" href=".">
-            <i class="fas fa-plane d-inline-block align-center" ></i>
+            <i class="fas fa-plane d-inline-block align-center"></i>
             隨意旅遊
           </a>
           <!-- 小螢幕漢堡符號 -->
@@ -85,88 +85,103 @@
         <div class="welcomeCartImg"></div>
       </div>
 
-      <!-- 產品Form JS30實作 Day6 & Day15  -->
+      <!-- workArea -->
+
       <div class="p-js-work__area container mb-5">
+
+        <!-- JS30實作 Day1 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">
-            Day6 & Day15
-            <!-- <button class="btn btn-secondary">Hide</button> -->
-          </h2>
-          <p class="p-js-work__describe mb-3">
-            學習重點: LocalStorage 和 搜尋功能練習
+          <h2 class="p-js-work__title mb-2">Day1 Drum Kit</h2>
+          <p class="p-js-work__describe mb-2">
+            說明: 按下鍵盤相應鍵位，產生音效
           </p>
           <p class="p-js-work__describe mb-3">
-            <form id="b-locals__form" class="form mt-3 clearfix">
-              <div class="b-locals__input__form form-group">
-                <input type="hidden" class="b-locals__input" name="id">
-                <input type="text" name="title" class="b-locals__input form-control mb-3" placeholder="Title" value="東京晴空塔夜遊 TEST" required>
-                <!-- Tag地區 -->
-                <div class="form-group mb-3">
-                  <label for="b-locals__select">地區</label>
-                  <select id="b-locals__select" class="form-control">
-                    <option hidden disabled value>選擇地區</option>
-                    <option value="關西" selected>關西</option>
-                    <option value="關東" selected>關東</option>
-                  </select>
-                </div>
-                <!-- Price -->
-                <label>
-                  <span>設定價錢</span><br>
-                  <input class="b-locals__input form-control mb-3" type="number" name="price" value="2800">
-                </label>
-                <!-- URL圖片 -->
-                <label>
-                  <span>範例圖片url</span><br>
-                  <input class="b-locals__input form-control mb-3" type="url" max="123" name="url" value="https://bit.ly/2VZ2HTo" readonly>
-                </label>
-                <img class="img-fluid mb-3" width="100" height="100" src="https://bit.ly/2VZ2HTo" alt="">
-                <textarea class="b-locals__textarea form-control mb-3" rows="5" placeholder="Content" required>東京晴空塔，又譯稱東京天空樹、新東京鐵塔。</textarea>
-                <input class="btn btn-primary float-right" type="submit" value="Submit">
-              </div>
-            </form>
+            學習重點: JS配合CSS3動畫、audio Tag使用
           </p>
+
+          <div class="b-keys">
+            <div data-key="71" class="b-key">
+              <kbd class="b-key__text">G</kbd>
+              <span class="b-key__subtext">boom</span>
+            </div>
+            <div data-key="75" class="b-key">
+              <kbd class="b-key__text">K</kbd>
+              <span class="b-key__subtext">tom</span>
+            </div>
+            <div data-key="76" class="b-key">
+              <kbd class="b-key__text">L</kbd>
+              <span class="b-key__subtext">tink</span>
+            </div>
+          </div>
+          <audio data-key="71" src="./sounds/boom.wav"></audio>
+          <audio data-key="75" src="./sounds/tom.wav"></audio>
+          <audio data-key="76" src="./sounds/tink.wav"></audio>
         </div>
-      </div>
 
-      <!-- 購物車頁 -->
-      <div class="productArea container-fluid">
-        <div class="row">
-          <!-- 側邊欄 -->
-          <div class="col-xs-12 col-sm-3">
-            <ul class="b-locals__tab__list productTab">
-              <span class="productSlogan">
-                <i class="fas fa-plane d-inline-block align-center" width="30" height="30"></i>
-                暢遊日本
-              </span>
-              <li class="activeTab">全部  (<span class="b-locals__tab" data-area="all">23</span>)</li>
-              <li >關東 (<span class="b-locals__tab" data-area="關東" >16</span>)</li>
-              <li >關西 (<span class="b-locals__tab" data-area="關西">7</span>)</li>
-            </ul>
+        <!-- JS30實作 Day4 & Day7 -->
+        <div class="p-array-cardio p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">Day4 & Day7 Array Cardio </h2>
+          <p class="p-js-work__describe mb-3">
+            學習重點: Array方法整理、事件代理、DOM產生&操作
+          </p>
 
+          <div id="b-array__table--origin"></div>
+
+          <div class="b-array__btns mb-3">
+            <button data-func="filter" id="b-array__btn--filter" class="btn btn-dark">Filter</button>
+            <button data-func="sortAge" id="b-array__btn--sort" class="btn btn-dark">Sort</button>
+            <button data-func="sortAlpha" id="b-array__btn--sortAlpha" class="btn btn-dark">SortAlpha</button>
+            <button data-func="find" id="b-array__btn--find" class="btn btn-dark">Find</button>
           </div>
 
-          <div class="col-xs-12 col-sm-9">
-            <!-- 搜尋Bar -->
-            <div class="productHeader mb-5">
-              <div class="productSearchBar">
-                <input id="b-locals__search" maxlength="10" value="京都" type="text" placeholder="搜尋地點...">
-                <button id="b-locals__search--send">
-                  <i class="fas fa-search" width="30" height="30"></i>
-                </button>
-              </div>
-              <button>
-                <i class="fas fa-dollar-sign"></i>
-                結帳
-              </button>
-              <button>
-                <i class="fas fa-shopping-cart"></i>
-                購物車
-              </button>
+          <div id="b-array__table--processed"></div>
+
+          <!-- some -->
+          <p class="b-array__bar d-block">
+            some()用法: 至少有一人
+            <input id="b-array__input--some" class="b-array__input" type="number" max="123" value="20">
+            歲?<span id="b-array__ans--some" class="ml-2">true</span>
+          </p>
+          <!-- every -->
+          <p class="b-array__bar d-block">
+            every()用法: 所有人皆年長於<span id="b-array__range--value">80</span>歲?
+            <br>
+            <div class="b-array__range__block">
+              <input id="b-array__input--every" class="b-array__input" step="10" type="range" value="80">
+              <span id="b-array__ans--every" class="ml-2">false</span>
             </div>
-            <!-- 產品列表 -->
-            <div id="b-locals__item__list" class="row productList">
-            </div>
-          </div>
+          </p>
+          <!-- findIndex -->
+          <p class="b-array__bar d-block">
+            findIndex()用法:last為
+            <input id="b-array__input--findIndex" class="b-array__input" type="text" placeholder="Enter Name"
+              maxlength="12" value="EinsteinA">
+            的Index為何?<span id="b-array__ans--findIndex" class="ml-2">0</span>
+          </p>
+
+          <div id="test"></div>
+
+        </div>
+
+        <!-- JS30實作 Day9 -->
+        <div class="p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">Day9 </h2>
+          <p class="p-js-work__describe mb-3">
+            說明: console 相關用法練習 (請打開console觀看結果)
+          </p>
+          <button class="b-console__btn--generate btn btn-info">Generate Console</button>
+          <button class="b-console__btn--clear btn btn-dark">CleanUp Console</button>
+        </div>
+
+        <!-- JS30實作 備用 -->
+        <div class="p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">備用</h2>
+          <p class="p-js-work__describe mb-3">
+            說明: console 相關用法練習
+          </p>
+          <p class="p-js-work__describe mb-3">
+            學習重點: JS配合CSS3動畫、audio Tag使用
+          </p>
         </div>
       </div>
 
