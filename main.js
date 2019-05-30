@@ -4,12 +4,38 @@
 
     /* Day1 DrumKit */
     // window.addEventListener('keydown', keyBoxEvent)
-    function keyBoxEvent(e) {
-      let keyPressed = e.keyCode
-      let target = document.querySelector(`.b-key[data-key="${keyPressed}"]`)
-      target.classList.add('animated')
-      target.classList.add('shake')
+    const drum = {
+      dom: {
+        audios: document.querySelector('.b-drum__audios'),
+      },
+      init() {
+        window.addEventListener('keydown', drum.keyPressed)
+      },
+      keyPressed(e) {
+        const pressedKey = e.keyCode
+        let target = document.querySelector(`.b-key[data-key="${pressedKey}"]`)
+        drum.playSound(pressedKey)
+        // drum.playSound()
+        if (target) {
+          if (target.classList.contains('animated')) {
+            target.classList.remove('heartBeat')
+          }
+          setTimeout(() => {
+            target.classList.add('heartBeat')
+            target.classList.add('animated')
+          }, 200)
+        }
+      },
+      playSound(key) {
+        const audioArr = [...drum.dom.audios.children]
+        // el.dataset.key 回傳為字串.. 被捅了一刀
+        const targetAudio = audioArr.filter(el => +(el.dataset.key) === key)[0]
+        // targetAudio.currentTime = 0
+        targetAudio.currentTime = 0
+        targetAudio.play()
+      },
     }
+
 
     /* Day2 JS & CSS Clock */
     /* Day29 Countdown Timer */
@@ -550,6 +576,7 @@
     }
     // JS30 頁才啟動
     if (currentPage.includes('js30')) {
+      drum.init()
       arrayCardio.init()
       myConsole.init()
     }
