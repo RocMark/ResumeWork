@@ -173,6 +173,93 @@ body {
   animation-name: fadeIn;
 }
 
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -869,6 +956,52 @@ body {
           animation-duration: 9s;
 }
 
+.githubLink {
+  color: #3e1000;
+}
+
+.githubLink:hover {
+  color: #3e1000;
+}
+
+.smoothScrollingMenu {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  background-color: #3e1000;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 15px;
+  z-index: 10;
+  visibility: hidden;
+}
+
+.smoothScrollingMenu li {
+  padding: 15px;
+  border-right: 0.5px solid;
+}
+
+.smoothScrollingMenu li:hover {
+  background-color: #fff;
+  color: #3e1000;
+  cursor: pointer;
+}
+
+.smoothScrollingMenu li:last-child {
+  border-right: none;
+}
+
 .welcomeArea .welcomeCartImg {
   height: 480px;
   background: #efeae4 url("https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") no-repeat center top fixed;
@@ -996,6 +1129,11 @@ body {
   background: #348498;
 }
 
+.productArea .product .productBody {
+  -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.16);
+}
+
 .productArea .product .productBody hr {
   border: none;
   height: 1px;
@@ -1032,52 +1170,27 @@ body {
   font-weight: 700;
 }
 
-.b-key {
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  padding: 1rem 2rem 2rem 2rem;
-  background-color: #212529;
-  border-radius: 15px;
+#b-clock__form input[type="number"] {
+  padding: 8px 8px 8px 12px;
+  width: 75px;
+}
+
+.b-clock__display--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.b-clock__display--inline p {
+  font-weight: bold;
   margin-right: 1rem;
-}
-
-.b-key:last-child {
-  margin-right: 0;
-}
-
-.b-key .b-key__text {
-  font-size: 2.25rem;
-}
-
-.b-key .b-key__subtext {
-  color: #ffc600;
-  text-transform: uppercase;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.maxContentW {
-  max-width: 1200px;
-}
-
-.productArea .product .productBody {
-  -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.16);
-          box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.16);
-}
-
-.testArea {
-  display: none;
-  height: 30vh;
-  padding: 20px;
-  border-bottom: 0.5px solid brown;
 }
 
 .p-array-cardio .b-array__table tbody, .p-array-cardio .b-array__table th, .p-array-cardio .b-array__table td {
@@ -1127,63 +1240,38 @@ html {
   font-weight: bold;
 }
 
-#b-clock__form input[type="number"] {
-  padding: 8px 8px 8px 12px;
-  width: 75px;
-}
-
-.b-clock__display--inline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.b-clock__display--inline p {
-  font-weight: bold;
+.b-key {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: #212529;
+  border-radius: 15px;
   margin-right: 1rem;
 }
 
-.smoothScrollingMenu {
-  position: fixed;
-  bottom: 0;
-  right: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style: none;
-  background-color: #3e1000;
-  color: #fff;
-  padding-left: 0;
-  border-radius: 15px;
-  z-index: 10;
-  visibility: hidden;
+.b-key:last-child {
+  margin-right: 0;
 }
 
-.smoothScrollingMenu li {
-  padding: 15px;
-  border-right: 0.5px solid;
+.b-key .b-key__text {
+  font-size: 2.25rem;
 }
 
-.smoothScrollingMenu li:hover {
-  background-color: #fff;
-  color: #3e1000;
-  cursor: pointer;
+.b-key .b-key__subtext {
+  color: #ffc600;
+  text-transform: uppercase;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.smoothScrollingMenu li:last-child {
-  border-right: none;
+html {
+  scroll-behavior: smooth;
+}
+
+.maxContentW {
+  max-width: 1200px;
 }

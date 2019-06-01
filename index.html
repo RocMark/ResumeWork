@@ -86,16 +86,16 @@
         <img class="welcomeImg img-fluid"
           src="https://images.unsplash.com/photo-1493515114968-cd0f4e52bf18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
           alt="welcomeImg">
-        <div class="welcomeBlock">
+        <div class="wow fadeIn welcomeBlock">
           <p class="welcomeTitle">Take a Trip</p>
           <p class="welcomeSubTitle">go some place where you never been</p>
         </div>
       </div>
 
       <!-- 三大服務-->
-      <div data-scroll="service" class="scrolling serviceArea container-fluid pt-5">
+      <div data-scroll="service" class="wow fadeIn scrolling serviceArea container-fluid pt-5">
         <div class="row mx-auto">
-          <div class="col-sm-12 col-md-4 card">
+          <div data-wow-offset="100" class="wow slideInLeft col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
               alt="serviceImg">
@@ -108,7 +108,7 @@
             </div>
             <!-- <div class="card-footer text-muted">Footer</div> -->
           </div>
-          <div class="col-sm-12 col-md-4 card">
+          <div data-wow-offset="100" class="wow slideInDown col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=653&q=80"
               alt="serviceImg">
@@ -121,7 +121,7 @@
             </div>
             <!-- <div class="card-footer text-muted">Footer</div> -->
           </div>
-          <div class="col-sm-12 col-md-4 card">
+          <div data-wow-offset="100" class="wow slideInRight col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
               src="https://images.unsplash.com/photo-1528031069244-0b780c7aeb52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
               alt="serviceImg">
@@ -138,7 +138,7 @@
       </div>
 
       <!-- 理念 -->
-      <div data-scroll="concept" class="scrolling conceptArea container-fluid mb-5">
+      <div data-wow-offset="100" data-scroll="concept" class="wow slideInRight scrolling conceptArea container-fluid mb-5">
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <img class="conceptImg"
@@ -160,7 +160,7 @@
       </div>
 
       <!-- 用戶感想 -->
-      <div data-scroll="review" class="scrolling userReviewArea container-fluid mb-5 p-0">
+      <div data-wow-offset="100" data-scroll="review" class="wow slideInLeft scrolling userReviewArea container-fluid mb-5 p-0">
         <div class="row maxContentW mx-auto">
 
           <div class="userReviewCard col-xs-12 col-sm-4">
@@ -270,7 +270,10 @@
                 <li>+886 886 886</li>
                 <li>onigir77799@gmail.com</li>
                 <li>
-                  <a class="githubLink" href="https://github.com/RocMark/ResumeWork">Github Link<i class="animated infinite shake slower far fa-hand-point-left"></i></a>
+                  <a class="githubLink mr-5" target="_blank" href="https://github.com/RocMark/ResumeWork">Github Link<i class="ml-3 animated infinite shake slower far fa-hand-point-left"></i></a>
+                </li>
+                <li>
+                  <a class="githubLink mr-5" target="_blank" href="https://ithelp.ithome.com.tw/users/20104135/articles">個人文章列表<i class="ml-3 animated infinite shake slower far fa-hand-point-left"></i></a>
                 </li>
               </ul>
             </div>
@@ -297,11 +300,16 @@
             </div>
           </div>
         </div>
-        <p class="text-center">Copyright © <a class="copyrightLink" href="https://github.com/RocMark/ResumeWork">RocMark</a> | 2019 | 僅供面試使用</p>
+        <p class="text-center">Copyright © <a target="_blank" class="copyrightLink" href="https://github.com/RocMark/ResumeWork">RocMark</a> | 2019 | 僅供面試使用</p>
       </footer>
 
     </div>
 
+    <!-- Wow.js 測試 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init()
+    </script>
 
     <!-- Optional JS jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -156,3 +156,40 @@
   }
 }
 
+
+.githubLink {
+  color: color(text-color);
+  &:hover {
+    color: color(text-color);
+  }
+}
+
+.smoothScrollingMenu {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  list-style: none;
+  background-color: color(text-color);
+  color: #fff;
+  padding-left: 0;
+  border-radius: 15px;
+  z-index: 10;
+
+  visibility: hidden;
+  li {
+    padding: 15px;
+    border-right: 0.5px solid;
+    &:hover{
+      // border-radius: 15px;
+      background-color: #fff;
+      color: color(text-color);
+      cursor: pointer;
+    }
+  }
+  li:last-child {
+    border-right: none;
+  }
+}
