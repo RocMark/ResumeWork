@@ -2,6 +2,40 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
 
+    /* Login Modal */
+    const login = {
+      modalShow: false,
+      dom: {
+        navLink: document.querySelector('.siteNavItem[data-link="login"]'),
+        modal: document.querySelector('.loginForm'),
+        exist: document.querySelector('.existIcon[data-exist="login"]'),
+      },
+      init() {
+        login.dom.navLink.addEventListener('click', login.showModal)
+        login.dom.exist.addEventListener('click', login.closeModal)
+      },
+      showModal(e) {
+        e.preventDefault()
+        const { modal } = login.dom
+        if (login.modalShow) {
+          login.modalShow = false
+          modal.style.visibility = 'hidden'
+        } else {
+          login.modalShow = true
+          modal.style.visibility = 'visible'
+        }
+        console.log(login.modalShow)
+        // modal.classList.add('animation')
+        // modal.classList.add('fadeIn')
+      },
+      closeModal() {
+        const { modal } = login.dom
+        login.modalShow = false
+        modal.style.visibility = 'hidden'
+      },
+    }
+    login.init()
+
     /* Smooth Scrolling */
     const smScroll = {
       navHeight: 0,
@@ -738,3 +772,7 @@
 
   })
 }())
+
+
+
+

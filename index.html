@@ -33,7 +33,30 @@
 
   <body>
 
-    
+    <div class="loginForm">
+      <div class="card text-left border-0">
+        <a data-exist="login" class="existIcon" href="javascript:;"></a>
+        <i class="loginFormPic fas fa-user"></i>
+        <div class="loginFormBody card-body pt-5">
+          <h5 class="card-title">Member Login</h5>
+          <div class="inputBar">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" name="username" required>
+          </div>
+          <div class="inputBar">
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" placeholder="Password" name="password" required>
+          </div>
+          <label class="loginFormCbox e-checkbox">
+            <input type="checkbox" checked="checked"> Remember Me
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="loginFormFooter card-footer">Register Now</div>
+        <div class="loginFormFooter card-footer">Forget Password?</div>
+      </div>
+    </div>
+
     <div class="warp">
       <h1 class="d-none">隨意旅遊</h1>
       <!-- 導覽列 -->
@@ -70,8 +93,8 @@
                   <span>JS30</span>
                 </a>
               </li>
-              <li class="nav-item siteNavItem mr-2">
-                <a class="nav-link" href="#">
+              <li data-link="login" class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="">
                   <i class="fas fa-user"></i>
                   <span>登入</span>
                 </a>
