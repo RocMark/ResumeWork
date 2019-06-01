@@ -2,6 +2,59 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
 
+    /* Smooth Scrolling */
+    const smScroll = {
+      navHeight: 0,
+      dom: {
+        nav: document.querySelector('#siteTop'),
+        scrollTopDom: document.querySelector('.scrolling'),
+        serviceArea: document.querySelector('.scrolling[data-scroll="service"]'),
+        conceptArea: document.querySelector('.scrolling[data-scroll="concept"]'),
+        reviewArea: document.querySelector('.scrolling[data-scroll="review"]'),
+        scrollLinks: document.querySelector('.smoothScrollingMenu'),
+      },
+      init() {
+        // 取得Nav DOM高
+        smScroll.navHeight = smScroll.getNavH()
+        // 掛載滾動事件 顯示按鈕 & 區域動畫
+        window.addEventListener('scroll', smScroll.showBTopBtn)
+        window.addEventListener('scroll', smScroll.startAnimation)
+        // 點擊按鈕
+        smScroll.dom.scrollLinks.addEventListener('click', smScroll.scrollTo)
+      },
+      getNavH() {
+        return this.dom.nav.getBoundingClientRect().height
+      },
+      getDomY(dom) {
+        return window.scrollY + dom.getBoundingClientRect().top - smScroll.navHeight
+      },
+      scrollTo(e) {
+        const areaName = e.target.dataset.scroll
+        if (areaName === 'top') { window.scrollTo(0, 0) } else {
+          window.scrollTo(0, smScroll.getDomY(smScroll.dom[`${areaName}Area`]))
+        }
+      },
+      // 根據當前Y顯示本頁的Nav
+      showBTopBtn(e) {
+        if (window.scrollY > 150) {
+          smScroll.dom.scrollLinks.style.visibility = 'visible'
+        } else {
+          smScroll.dom.scrollLinks.style.visibility = 'hidden'
+        }
+      },
+      startAnimation() {
+        // const currentY = window.scrollY
+        // const aniDom = smScroll.dom.serviceArea
+        // if (currentY > 10) {
+        //   if (!aniDom.classList.contains('')) {
+        //     aniDom.classList.add('animation')
+        //     aniDom.classList.add('fadeIn')
+        //   }
+        // }
+      },
+    }
+    
+
     /* Day1 DrumKit */
     // window.addEventListener('keydown', keyBoxEvent)
     const drum = {
@@ -137,8 +190,6 @@
         // clearInterval(clock.startCountDown())
       },
     }
-    clock.init()
-
 
     /* Day4 & Day7 Array Cardio */
     /* Day6 TypeAhead 購物車搜尋欄*/
@@ -208,6 +259,7 @@
         this.dom.findIndexInput.addEventListener('change', this.findIndexInputFunc)
         this.dom.findIndexInput.addEventListener('input', this.findIndexInputFunc)
         
+        // 渲染原始表單
         this.renderData(
           arrayCardio.dom.originDataDOM,
           'origin',
@@ -668,15 +720,18 @@
     /* 偵測當前分頁 啟動相應JS */
     const runDetect = function () {
       const currentPage = window.location.href
-      // cart頁才啟動
       if (currentPage.includes('cart')) {
+        // cart頁才啟動
         myLocalStorage.init()
-      }
-      // JS30 頁才啟動
-      if (currentPage.includes('js30')) {
+      } else if (currentPage.includes('js30')) {
+        // JS30 頁才啟動
+        clock.init()
         drum.init()
         arrayCardio.init()
         myConsole.init()
+      } else {
+        // Index 頁才啟動
+        smScroll.init()
       }
     }
     runDetect()

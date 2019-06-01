@@ -11,3 +11,7 @@
 * 購物車 Tab active切換
 * 購物清單 Tag 樣式
 * GithubLink 箭頭
+
+# 待寫文章
+1. 陣列去重
+2. ES6陣列補完

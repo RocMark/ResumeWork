@@ -82,23 +82,18 @@
       </div>
 
       <!-- 頁首 -->
-      <div class="welcomeArea container-fluid p-0 mb-5">
-
+      <div class="testDom welcomeArea container-fluid p-0">
         <img class="welcomeImg img-fluid"
           src="https://images.unsplash.com/photo-1493515114968-cd0f4e52bf18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
           alt="welcomeImg">
-
         <div class="welcomeBlock">
           <p class="welcomeTitle">Take a Trip</p>
           <p class="welcomeSubTitle">go some place where you never been</p>
         </div>
       </div>
 
-      <div class="testArea">
-      </div>
-
       <!-- 三大服務-->
-      <div class="serviceArea container-fluid p-0">
+      <div data-scroll="service" class="scrolling serviceArea container-fluid pt-5">
         <div class="row mx-auto">
           <div class="col-sm-12 col-md-4 card">
             <img class="serviceImg card-img-top"
@@ -143,7 +138,7 @@
       </div>
 
       <!-- 理念 -->
-      <div class="conceptArea container-fluid mb-5">
+      <div data-scroll="concept" class="scrolling conceptArea container-fluid mb-5">
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <img class="conceptImg"
@@ -165,7 +160,7 @@
       </div>
 
       <!-- 用戶感想 -->
-      <div class="userReviewArea container-fluid mb-5 p-0">
+      <div data-scroll="review" class="scrolling userReviewArea container-fluid mb-5 p-0">
         <div class="row maxContentW mx-auto">
 
           <div class="userReviewCard col-xs-12 col-sm-4">
@@ -250,6 +245,14 @@
 
         </div>
       </div>
+
+      <!-- 浮動SmoothScrolling Menu -->
+      <ul class="smoothScrollingMenu">
+        <li data-scroll="service" class="scrollLink">三大服務</li>
+        <li data-scroll="concept" class="scrollLink">理念</li>
+        <li data-scroll="top" class="scrollLink">Top</li>
+        <li data-scroll="review" class="scrollLink">用戶感想</li>
+      </ul>
 
       <!-- 頁尾 -->
       <footer class="siteFooter container-fluid">

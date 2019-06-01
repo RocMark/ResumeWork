@@ -36,6 +36,9 @@
 @import './page/jsWorkPage';
 
 // 重要Class
+html {
+  scroll-behavior: smooth;
+}
 .maxContentW {
   max-width: $max-contentW;
 }
@@ -91,7 +94,6 @@
   }
 }
 
-
 #b-clock__form{
   input[type="number"]{
     padding: 8px 8px 8px 12px;
@@ -108,8 +110,45 @@
   }
 }
 
+.scrolling {
+  // border: .5px solid #f50057;
+}
+.smoothScrollingMenu {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  list-style: none;
+  background-color: color(text-color);
+  color: #fff;
+  padding-left: 0;
+  border-radius: 15px;
+  z-index: 10;
+
+  visibility: hidden;
+  li {
+    padding: 15px;
+    border-right: 0.5px solid;
+    &:hover{
+      // border-radius: 15px;
+      background-color: #fff;
+      color: color(text-color);
+      cursor: pointer;
+    }
+  }
+  li:last-child {
+    border-right: none;
+  }
+}
+
+.serviceArea {
+  // opacity: 0;
+}
 
 // media
 @import './media/media-setting';
 
 @import './media/media';
+
