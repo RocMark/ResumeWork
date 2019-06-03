@@ -12,7 +12,9 @@
   }
 }
 
-
+.p-js-work__describe a{
+  color: color(text-color)
+}
 
 #b-clock__form{
   input[type="number"]{
@@ -92,5 +94,49 @@
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.b-aqi__table--rule {
+  text-align: center;
+  height: 76px;
+  overflow: scroll; 
+  @include table-border(#000,2px);
+  th {
+    padding: 10px;
+  }
+}
+
+.b-aqi__table--data {
+  text-align: center;
+  @include table-border(color(text-color),2px);
+  th {
+    padding: 10px;
+  }
+  tbody tr {
+    padding: 200px;
+  }
+}
+
+.b-aqi__showcase {
+  .b-aqi__block {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid color(text-color);
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .b-aqi__pubTime {
+    display: inline-block;
+  }
+}
+
+// @each $var1,$var2 in <list/map>
+// 渲染 aqi 表單
+@each $key, $color in $aqi-c {
+  .b-aqi__table--rule thead tr th{
+    &:nth-child(#{$key}){
+      background-color: $color;
+    }
   }
 }
