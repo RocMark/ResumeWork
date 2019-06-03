@@ -1325,7 +1325,8 @@ body {
 }
 
 .p-js-work__describe a {
-  color: #3e1000;
+  background-color: #212529;
+  color: #fff;
 }
 
 #b-clock__form input[type="number"] {
