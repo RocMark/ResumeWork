@@ -1,0 +1,80 @@
+// ! table-hover 待整理
+// table
+// table-sm
+// table-bordered
+// table-striped
+
+// @each $var1,$var2 in <list/map>
+// 渲染 aqi 表單
+@each $key, $color in $aqi-c {
+  .b-aqi__table--rule thead tr th{
+    &:nth-child(#{$key}){
+      background-color: $color;
+    }
+  }
+}
+
+
+$table-dark:#32383e;
+
+table {
+  // Prevent double borders
+  border-collapse: collapse;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: #b8daff;
+}
