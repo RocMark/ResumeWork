@@ -592,6 +592,10 @@ a {
   color: #000;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 p {
   margin: 0;
 }
@@ -1440,4 +1444,92 @@ html {
 
 .inputBar input {
   padding-left: 27px;
+}
+
+.p-js-work__describe a {
+  color: #3e1000;
+}
+
+.b-aqi__showcase .b-aqi__block {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid #3e1000;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.b-aqi__showcase .b-aqi__pubTime {
+  display: inline-block;
+}
+
+.b-aqi__table--rule {
+  text-align: center;
+  height: 76px;
+  overflow: scroll;
+  border: 2px solid #000;
+}
+
+.b-aqi__table--rule thead {
+  border-bottom: 2px solid #000;
+}
+
+.b-aqi__table--rule th {
+  border-right: 2px solid #000;
+}
+
+.b-aqi__table--rule td {
+  border-right: 2px solid #000;
+}
+
+.b-aqi__table--rule th {
+  padding: 10px;
+}
+
+.b-aqi__table--data {
+  text-align: center;
+  border: 2px solid #3e1000;
+}
+
+.b-aqi__table--data thead {
+  border-bottom: 2px solid #3e1000;
+}
+
+.b-aqi__table--data th {
+  border-right: 2px solid #3e1000;
+}
+
+.b-aqi__table--data td {
+  border-right: 2px solid #3e1000;
+}
+
+.b-aqi__table--data th {
+  padding: 10px;
+}
+
+.b-aqi__table--data tbody tr {
+  padding: 200px;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(1) {
+  background-color: #00E800;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(2) {
+  background-color: #FFFF00;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(3) {
+  background-color: #FF7E00;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(4) {
+  background-color: #FF0000;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(5) {
+  background-color: #8F3F97;
+}
+
+.b-aqi__table--rule thead tr th:nth-child(6) {
+  background-color: #7E0023;
 }

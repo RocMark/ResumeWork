@@ -110,12 +110,90 @@
       </div>
 
       <!-- workArea -->
-
       <div class="p-js-work__area container mb-5">
+
+        <!-- JS30實作 備用 -->
+        <div class="p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">空氣品質指標</h2>
+          <p class="p-js-work__describe mb-2">
+            學習重點: API串接、Promise
+          </p>
+          <p class="p-js-work__describe mb-2">
+            使用技術: SCSS Map、聯動 Select、CORS處理
+          </p>
+          <p class="p-js-work__describe mb-3">
+            資料來源: <a target="_blank" href="https://opendata.epa.gov.tw/Data/Contents/AQI/">行政院環境保護署</a>
+          </p>
+
+          <table class="b-aqi__table--rule mb-3">
+            <thead class="">
+              <tr>
+                <th scope="row">0~50</th>
+                <th scope="row">50~100</th>
+                <th scope="row">101~150</th>
+                <th scope="row">151~200</th>
+                <th scope="row">201~300</th>
+                <th scope="row">300~400</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>良好</td>
+                <td>普通</td>
+                <td>對敏感族群不健康</td>
+                <td>對所有族群不健康</td>
+                <td>非常不健康</td>
+                <td>危害</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="form-group">
+            <select class="b-aqi__select--city form-control mb-3">
+            </select>
+            <select class="b-aqi__select--dist form-control" disabled>
+              <option hidden disabled selected value>請先選擇城市</option>
+            </select>
+          </div>
+
+          <div class="b-aqi__showcase mb-3">
+            <p class="b-aqi__block b-aqi__score mr-2">00</p>
+            <p class="b-aqi__block b-aqi__status mr-2">狀況</p>
+            <p class="b-aqi__pubTime"></p>
+          </div>
+
+          <table class="b-aqi__table--data mb-3">
+            <thead>
+              <tr>
+                <th scope="row">城市</th>
+                <th scope="row">地區</th>
+                <th scope="row">懸浮微粒</th>
+                <th scope="row">細懸浮微粒</th>
+                <th scope="row">臭氧</th>
+                <th scope="row">一氧化碳</th>
+                <th scope="row">二氧化硫</th>
+                <th scope="row">二氧化氮</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="b-aqi__table--result">
+                <td>Z市</td>
+                <td>琦玉家</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
 
         <!-- JS30實作 Day1 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">Day1 Drum Kit</h2>
+          <h2 class="p-js-work__title mb-2">Drum Kit</h2>
           <p class="p-js-work__describe mb-2">
             說明: 按下鍵盤相應鍵位，產生音效
           </p>
@@ -147,7 +225,7 @@
 
         <!-- JS30實作 Day2 & Day9 Clock-->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">Day2 & Day9 Clock</h2>
+          <h2 class="p-js-work__title mb-2">Clock</h2>
           <p class="p-js-work__describe mb-3">
             學習重點: JS時間處理、setInterval用法
             <a class="btn btn-dark ml-4" target="_blank" href="https://ithelp.ithome.com.tw/articles/10212006">文章連結</a>
@@ -174,7 +252,7 @@
 
         <!-- JS30實作 Day4 & Day7 -->
         <div class="p-array-cardio p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">Day4 & Day7 Array Cardio </h2>
+          <h2 class="p-js-work__title mb-2">Array Cardio </h2>
           <p class="p-js-work__describe mb-3">
             學習重點: Array方法整理、事件代理、DOM產生&操作
             <a class="btn btn-dark ml-4" target="_blank" href="https://ithelp.ithome.com.tw/articles/10212008">文章連結</a>
@@ -222,7 +300,7 @@
 
         <!-- JS30實作 Day9 -->
         <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">Day9 </h2>
+          <h2 class="p-js-work__title mb-2">Console 練習</h2>
           <p class="p-js-work__describe mb-3">
             說明: console 相關用法練習 (請打開console觀看結果)
           </p>

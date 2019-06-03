@@ -18,3 +18,12 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+
+// Table 框架 顏色 & 厚度
+@mixin table-border($color,$thick) {
+  border: $thick solid $color;
+  thead { border-bottom: $thick solid $color; }
+  th{ border-right: $thick solid $color; }
+  td { border-right: $thick solid $color; }
+}

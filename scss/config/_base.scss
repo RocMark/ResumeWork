@@ -8,6 +8,11 @@ a {
   color: #000;
 }
 
+table {
+  // Prevent double borders
+  border-collapse: collapse;
+}
+
 p {
   margin: 0;
 }

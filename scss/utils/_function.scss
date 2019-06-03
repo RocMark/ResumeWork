@@ -2,6 +2,10 @@
   @return map-get($color, $color-name);
 }
 
+@function aiq-c($color-name) {
+  @return map-get($aiq-c, $color-name);
+}
+
 @function pxToRem($px) {
   @if ($px == 0) {
     @return 0;

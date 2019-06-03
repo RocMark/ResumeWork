@@ -4,22 +4,22 @@ $md-media: 768px;
 $sm-media: 576px;
 
 @mixin media-xl() {
-  @media all and (min-width: $xl-media) {
+  @media all and (max-width: $xl-media) {
     @content;
   }
 }
 @mixin media-lg() {
-  @media all and (min-width: $lg-media) {
+  @media all and (max-width: $lg-media) {
     @content;
   }
 }
 @mixin media-md() {
-  @media all and (min-width: $md-media) {
+  @media all and (max-width: $md-media) {
     @content;
   }
 }
 @mixin media-sm() {
-  @media all and (min-width: $sm-media) {
+  @media all and (max-width: $sm-media) {
     @content;
   }
 }

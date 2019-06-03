@@ -16,3 +16,13 @@ $color: (
 
 // 原本使用 map-get(color,grey)
 // 有Function使用 color(grey)
+
+$aqi-c:(
+  // 低到高
+  1: #00E800,
+  2: #FFFF00,
+  3: #FF7E00,
+  4: #FF0000,
+  5: #8F3F97,
+  6: #7E0023,
+);
