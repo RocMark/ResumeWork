@@ -2,3 +2,4 @@ node_modules
 .vscode
 test.html
 test.js
+_test.scss

@@ -26,8 +26,6 @@
           modal.style.visibility = 'visible'
         }
         console.log(login.modalShow)
-        // modal.classList.add('animation')
-        // modal.classList.add('fadeIn')
       },
       closeModal() {
         const { modal } = login.dom
