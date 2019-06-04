@@ -174,7 +174,6 @@
     }
 
     /* Day1 DrumKit */
-    // window.addEventListener('keydown', keyBoxEvent)
     const drum = {
       dom: {
         audios: document.querySelector('.b-drum__audios'),
@@ -219,7 +218,6 @@
 
     /* Day2 JS & CSS Clock */
     /* Day29 Countdown Timer */
-    // Clock先不刻，先能做個電子鐘就行
     const clock = {
       dom: {
         // 設定時間的Form
@@ -559,6 +557,7 @@
         }
       },
     }
+
     /* Day9 DevToolsDomination */
     const myConsole = {
       consoleGenBtn: document.querySelector('.b-console__btn--generate'),
@@ -671,6 +670,7 @@
       },
     }
 
+    /* 產品清單 */
     /* Day15 LocalStorage */
     const myLocalStorage = {
       dom: {

@@ -16,9 +16,21 @@
 Ex: ESLint,ChromeDevTools
 
 ## Preview
-
+### 形象頁面
+- BS4 實現 RWD
+- 使用原生JS計算區塊高，輔以CSS作平滑滾動
+- 使用wow.js實現，滾輪事件觸發動畫
 ![網站首頁](https://i.imgur.com/C75MVuS.png)
-![購物車預覽](https://i.imgur.com/SHLxd60.png)
-![空氣品質指標](https://i.imgur.com/pa70Gaq.png)
+### 產品清單
+- BS4 實現 RWD
+- 使用 LocalStorage 存取資料
+- 使用 ES6 Array 方法進行篩選資料
+![產品清單](https://i.imgur.com/SHLxd60.png)
 ![新增產品預覽](https://i.imgur.com/xs7RBIU.png)
+### 空氣品質指標
+- 串接政府公開資料 API
+- 使用 Promise, XMLHttpRequest
+- SCSS 儲存顏色變數、@each套用
+![空氣品質指標](https://i.imgur.com/pa70Gaq.png)
+### JS30
 ![JS30預覽](https://i.imgur.com/Xua5lBC.png)
