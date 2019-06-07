@@ -35,6 +35,117 @@
     }
     login.init()
 
+    /* 時區查詢 */
+    const timeZone = {
+      dom: {
+        range: document.querySelector('#b-time__range'),
+        rangeAns: document.querySelector('#b-time__range--ans'),
+        localCity: document.querySelector('.b-time__city[data-time="local"]'),
+        localDate: document.querySelector('.b-time__date[data-time="local"]'),
+        localTime: document.querySelector('.b-time__time[data-time="local"]'),
+        rangeCity: document.querySelector('.b-time__city[data-time="range"]'),
+        rangeDate: document.querySelector('.b-time__date[data-time="range"]'),
+        rangeTime: document.querySelector('.b-time__time[data-time="range"]'),
+        nyDate: document.querySelector('.b-time__date[data-time="ny"]'),
+        nyTime: document.querySelector('.b-time__time[data-time="ny"]'),
+      },
+      currentRange: 0,
+      init() {
+        // 掛載 range條 監聽
+        timeZone.dom.range.addEventListener('change', timeZone.renderRangeTime)
+
+        // 預設渲染 GMT+0 時區
+        timeZone.renderRangeDom(timeZone.getRangeTime(0))
+
+        timeZone.renderNyTime()
+        timeZone.renderLocalTime()
+
+        // timeZone.renderRangeTime()
+
+        // LocalTime 每分鐘刷新
+        setInterval(() => {
+          // 每分鐘依暫存變數刷新
+          timeZone.renderRangeDom(timeZone.getRangeTime(timeZone.currentRange))
+          timeZone.renderLocalTime()
+          timeZone.renderNyTime()
+        }, 1000 * 60)
+      },
+      monthArr: ['JAN', 'FEB', 'MAR', 'APR', 'May', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      // 取得與
+      getTimeFormat(time = new Date()) {
+        // console.log(time)
+        
+        const timeZoneOffset = -(time.getTimezoneOffset() / 60)
+        const timeZoneStr = (timeZoneOffset > 0) ? `+${timeZoneOffset}` : `${timeZoneOffset}`
+
+        const year = time.getFullYear()
+        const month = time.getMonth() + 1
+        const date = time.getDate()
+
+        const monthString = timeZone.monthArr[(month - 1)]
+        
+        const hour = (time.getHours() > 10) ? time.getHours() : `0${time.getHours()}`
+        const min = (time.getMinutes() > 10) ? time.getMinutes() : `0${time.getMinutes()}`
+
+        return {
+          timeZone: `${timeZoneStr}`,
+          dateString: `${date} ${monthString} ${year}`,
+          timeString: `${hour}:${min}`,
+        } 
+      },
+      renderLocalTime() {
+        // 傳入當地時間
+        const result = this.getTimeFormat(new Date())
+        this.dom.localCity.innerText = `本地 (${result.timeZone})`
+        this.dom.localDate.innerText = result.dateString
+        this.dom.localTime.innerText = result.timeString
+      },
+      // 傳入與GMT+0 的差
+      getRangeTime(offset) {
+        // 取得 GMT+0 再加上
+        const gmtTime = new Date().valueOf() + ((-8) * 60 * 60 * 1000)
+        const addMs = ((+offset) * 60 * 60 * 1000) + gmtTime
+        const rangeDate = new Date(addMs)
+        // console.log(rangeDate)
+        return rangeDate
+      },
+      // 渲染 Range 元件 & 取得時間 & 呼叫渲染結果
+      renderRangeTime(e) {
+        const rangeVal = e.target.value
+        // 存入變數，使其作為每分鐘刷新的依據
+        timeZone.currentRange = rangeVal
+        // 渲染 Range 值
+        const rangeStr = (rangeVal > 0) ? `+${rangeVal}` : `${rangeVal}`
+        timeZone.dom.rangeAns.innerText = rangeStr
+        timeZone.dom.rangeCity.innerText = `${rangeStr} 區`
+
+        const rangeDate = timeZone.getRangeTime(rangeVal)
+        timeZone.renderRangeDom(rangeDate)
+      },
+      // 渲染 Range選定後 結果區域
+      renderRangeDom(time) {
+        const result = timeZone.getTimeFormat(time)
+        timeZone.dom.rangeDate.innerText = result.dateString
+        timeZone.dom.rangeTime.innerText = result.timeString
+      },
+      renderNyTime() {
+        // toLocaleString 時區屬性
+        const nyTimeZone = 'America/New_York'
+        // 取得當地時間字串
+        const nyTimeStr = new Date().toLocaleString('en-US', { 
+          timeZone: nyTimeZone,
+        })
+        // 轉換成時間 帶入 format function
+        const nyTimeDate = new Date(nyTimeStr)
+        // console.log('nyTimeDate', nyTimeDate)
+
+        // 渲染DOM
+        const result = this.getTimeFormat(nyTimeDate)
+        this.dom.nyDate.innerText = result.dateString
+        this.dom.nyTime.innerText = result.timeString
+      },
+    }
+
     /* 空氣汙染 API 串接 */
     const aqi = {
       dom: {
@@ -918,6 +1029,7 @@
         myLocalStorage.init()
       } else if (currentPage.includes('js30')) {
         // JS30 頁才啟動
+        timeZone.init()
         aqi.init()  
         clock.init()
         drum.init()
