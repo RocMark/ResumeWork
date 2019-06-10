@@ -115,93 +115,135 @@
         <div class="welcomeCartImg"></div>
       </div>
 
-      <!-- 產品Form JS30實作 Day6 & Day15  -->
-      <div class="p-js-work__area container mb-5">
-        <div class="p-js-work__block mb-5">
-          <h2 class="p-js-work__title mb-2">
-            LocalStorage
-            <!-- <button class="btn btn-secondary">Hide</button> -->
-          </h2>
-          <p class="p-js-work__describe mb-3">
-            學習重點: LocalStorage 和 搜尋功能練習
-          </p>
-          <p class="p-js-work__describe mb-3">
-            <form id="b-locals__form" class="form mt-3 clearfix">
-              <div class="b-locals__input__form form-group">
-                <input type="hidden" class="b-locals__input" name="id">
-                <input type="text" name="title" class="b-locals__input form-control mb-3" placeholder="Title"
-                  value="東京晴空塔夜遊 TEST" required>
-                <!-- Tag地區 -->
-                <div class="form-group mb-3">
-                  <label for="b-locals__select">地區</label>
-                  <select id="b-locals__select" class="form-control">
-                    <option hidden disabled value>選擇地區</option>
-                    <option value="關西" selected>關西</option>
-                    <option value="關東" selected>關東</option>
-                  </select>
-                </div>
-                <!-- Price -->
-                <label>
-                  <span>設定價錢</span><br>
-                  <input class="b-locals__input form-control mb-3" type="number" name="price" value="2800">
-                </label>
-                <!-- URL圖片 -->
-                <label>
-                  <span>範例圖片url</span><br>
-                  <input class="b-locals__input form-control mb-3" type="url" max="123" name="url"
-                    value="https://bit.ly/2VZ2HTo" readonly>
-                </label>
-                <img class="img-fluid mb-3" width="100" height="100" src="https://bit.ly/2VZ2HTo" alt="">
-                <textarea class="b-locals__textarea form-control mb-3" rows="5" placeholder="Content"
-                  required>東京晴空塔，又譯稱東京天空樹、新東京鐵塔。</textarea>
-                <input class="btn btn-primary float-right" type="submit" value="Submit">
-              </div>
-            </form>
-          </p>
-        </div>
-      </div>
-
-      <!-- 購物車頁 -->
-      <div class="productArea container-fluid">
-        <div class="row">
-          <!-- 側邊欄 -->
-          <div class="col-xs-12 col-sm-3">
-            <ul class="b-locals__tab__list productTab">
-              <span class="productSlogan">
-                <i class="fas fa-plane d-inline-block align-center" width="30" height="30"></i>
-                暢遊日本
-              </span>
-              <li class="activeTab">全部 (<span class="b-locals__tab" data-area="all">23</span>)</li>
-              <li>關東 (<span class="b-locals__tab" data-area="關東">16</span>)</li>
-              <li>關西 (<span class="b-locals__tab" data-area="關西">7</span>)</li>
+      <div class="p-resume">
+        <div class="p-resume__header">
+          <div class="p-resume__intro">
+            <h1 class="mb-2">曾裕修<span class="ml-3">Mark</span></h1>
+            <p>喜歡不斷吸收新知，整理撰寫成文章，累積成資產。</p>
+            <p class="mb-4">樂於學習及挖掘原理，要求自己寫出更好的程式瑪。</p>
+            <p class="mb-2"><i class="fas fa-envelope mr-2"></i>onigir77799@gmail.com</p>
+            <p class="mb-2"><i class="fas fa-plane mr-2"></i>連絡電話提供於信件中</p>
+            <ul class="p-resume__links">
+              <li>
+                <a target="_blank" href="https://github.com/RocMark"><i class="fas fa-plane mr-1"></i>Github</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://ithelp.ithome.com.tw/users/20104135/articles"><i class="fas fa-plane mr-1"></i>IT邦</a>
+              </li>
             </ul>
-
           </div>
-
-          <div class="col-xs-12 col-sm-9">
-            <!-- 搜尋Bar -->
-            <div class="productHeader mb-5">
-              <div class="productSearchBar">
-                <input id="b-locals__search" maxlength="10" value="京都" type="text" placeholder="搜尋地點...">
-                <button id="b-locals__search--send">
-                  <i class="fas fa-search" width="30" height="30"></i>
-                </button>
+          <img class="p-resume__photo mr-5" src="https://i.imgur.com/Efi2twS.jpg" alt="">
+        </div>
+        <div class="p-resume__content">
+          <!-- 技能 -->
+          <div class="p-resume__block">
+            <div class="p-resume__title__block">
+              <i class="fas fa-code"></i>
+              <div class="p-resume__title">技能</div>
+            </div>
+            <ul class="p-resume__list">
+              <div class="p-resume__list__header mb-2">
+                <ul class="p-resume__icon__list">
+                  <li>
+                    <i class="fab fa-js"></i>
+                    <span>ES6</span>
+                  </li>
+                  <li>
+                    <i class="fab fa-bootstrap"></i>
+                    <span>BS4</span>
+                  </li>
+                  <li>
+                    <i class="fab fa-git-square"></i>
+                    <span>Git</span>
+                  </li>
+                  <li>
+                    <i class="fab fa-sass"></i>
+                    <span>SCSS</span>
+                  </li>
+                  <!-- <li>
+                    <i class="fas fa-plane"></i>
+                    <span>jQuery</span>
+                  </li> -->
+                </ul>
               </div>
-              <button>
-                <i class="fas fa-dollar-sign"></i>
-                結帳
-              </button>
-              <button>
-                <i class="fas fa-shopping-cart"></i>
-                購物車
-              </button>
+              <li>使用 原生 JavaScript 與 ES6 開發前端功能。</li>
+              <li>熟悉 SCSS 用以切割元件，運用變數、Mixin、Function。</li>
+              <li>熟悉 Bootstrap 4，並實作 RWD 網頁切版。</li>
+              <li>了解 CSS原理，亦有能力實現 RWD 切版。</li>
+              <li>熟悉 jQuery DOM 操作、動畫效果。</li>
+              <li>了解 Git 基礎操作，實現版本控制</li>
+            </ul>
+            <ul class="p-resume__list">
+              <div class="p-resume__list__header mb-2">
+                <ul class="p-resume__icon__list">
+                  <li>
+                    <i class="fa fa-edit"></i>
+                    <span>VSCode</span>
+                  </li>
+                  <li>
+                    <i class="fa fa-scroll"></i>
+                    <span>ESlint</span>
+                  </li>
+                  <li>
+                    <i class="fab fa-sourcetree"></i>
+                    <span>SourceTree</span>
+                  </li>
+                  <li data-color="darkblue">
+                    <i class="fab fa-stack-overflow"></i>
+                    <span>Stack Overflow</span>
+                  </li>
+                </ul>
+              </div>
+              <li>使用 Visual Studio Code 作為編輯器</li>
+              <li>遵循 ESLint Airbnb 作為撰寫規範</li>
+              <li>使用 SourceTree 與 VSCode插件 輔助 Git 操作 & 開發</li>
+              <li>善用 Chrome Dev Tools 與各種插件進行除錯</li>
+              <li>有能力閱讀 MDN 與 Stack Overflow 自行解決問題</li>
+            </ul>
+          </div>
+          <!-- 專案 -->
+          <div class="p-resume__block">
+            <div class="p-resume__title__block">
+              <i class="fas fa-bookmark"></i>
+              <div class="p-resume__title">專案</div>
             </div>
-            <!-- 產品列表 -->
-            <div id="b-locals__item__list" class="row productList">
+            <div class="p-resume__case p-resume__block__header mb-4">
+              <a class="p-resume__case__title mr-3" target="_blank" href="https://rocmark.github.io/ResumeWork/">隨意旅遊</a>
+              <a class="p-resume__case__link" target="_blank" href="https://github.com/RocMark/ResumeWork">
+                <i class="fab fa-github"></i>
+                Github
+              </a>
+              <a class="p-resume__case__link" target="_blank" href="https://rocmark.github.io/ResumeWork/">
+                <i class="fas fa-plane"></i>
+                DEMO
+              </a>
             </div>
+            <div class="p-resume__case__content d-flex justify-content-between">
+              <ul class="p-resume__list">
+                <span>相關技術</span>
+                <li>使用 純原生 JavaScript 練習各種範例</li>
+                <li>使用 Bootstrap 4 網格系統實現 RWD 排版 </li>
+                <li>運用 SCSS 作檔案分割，亦撰寫自己的 SCSS 架構 </li>
+                <li>使用 Animate.css 與 wow.js 增添各種動畫</li>
+                <li>使用 LocalStorage 進行購物清單增減 </li>
+                <li>實踐所學的 SEO 知識，以及運用工具作調校</li>
+              </ul>
+            </div>
+            <img class="p-resume__case__img" src="https://i.imgur.com/JkUHYzh.png" alt="resume_preview">
+          </div>
+          <!-- 關於我 -->
+          <div class="p-resume__block">
+            <div class="p-resume__title__block">
+              <i class="fas fa-child"></i>
+              <div class="p-resume__title">關於我</div>
+            </div>
+            <p class="mb-2">畢業於東華大學資訊管理學系，於大三下開始自學網頁程式設計，並確認自己想成為前端工程師的決心，沉浸於不斷吸收新知及成長的成就感。</p>
+            <p class="mb-2">喜歡整理知識並撰寫成文章來分享，樂於與人交流知識與分享實用的工具。</p>
+            <p class="mb-2">認為前端工程師涉及的範圍廣泛，能夠學習不少東西，亦有跟後端、設計師協作學習的機會，是一個能讓擴充自己視野以及有未來展望的職業。</p>
           </div>
         </div>
       </div>
+
 
       <!-- 頁尾 -->
       <footer class="siteFooter container-fluid">

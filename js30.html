@@ -84,13 +84,19 @@
               <li class="nav-item siteNavItem mr-2">
                 <a class="nav-link" href="./cart.html">
                   <i class="fas fa-shopping-cart"></i>
-                  <span>購物車</span>
+                  <span>產品</span>
                 </a>
               </li>
               <li class="nav-item siteNavItem mr-2">
                 <a class="nav-link" href="./js30.html">
                   <i class="far fa-file"></i>
                   <span>範例</span>
+                </a>
+              </li>
+              <li class="nav-item siteNavItem mr-2">
+                <a class="nav-link" href="./resume.html">
+                  <i class="far fa-file"></i>
+                  <span>履歷</span>
                 </a>
               </li>
               <li data-link="login" class="nav-item siteNavItem mr-2">
@@ -111,6 +117,49 @@
 
       <!-- workArea -->
       <div class="p-js-work__area container mb-5">
+
+        <!-- 計算機(未完成) -->
+        <div class="d-none p-js-work__block mb-5">
+          <h2 class="p-js-work__title mb-2">計算機</h2>
+          <p class="p-js-work__describe mb-3">
+            學習重點: 數字處理(負數、無限)
+          </p>
+          <div class="b-cal">
+            <div class="b-cal__header">
+              <p class="b-cal__str">0</p>
+              <p class="b-cal__val">0</p>
+            </div>
+            <div class="b-cal__row">
+              <button data-num="7" class="b-cal__num">7</button>
+              <button data-num="8" class="b-cal__num">8</button>
+              <button data-num="9" class="b-cal__num">9</button>
+              <button data-op="/" class="b-cal__op">/</button>
+            </div>
+            <div class="b-cal__row">
+              <button data-num="4" class="b-cal__num">4</button>
+              <button data-num="5" class="b-cal__num">5</button>
+              <button data-num="6" class="b-cal__num">6</button>
+              <button data-op="*" class="b-cal__op">x</button>
+            </div>
+            <div class="b-cal__row">
+              <button data-num="1" class="b-cal__num">1</button>
+              <button data-num="2" class="b-cal__num">2</button>
+              <button data-num="3" class="b-cal__num">3</button>
+              <button data-op="+" class="b-cal__op">+</button>
+            </div>
+            <div class="b-cal__row">
+              <button data-num="0" class="b-cal__num">0</button>
+              <button data-num="00" class="b-cal__num">00</button>
+              <button data-num="." class="b-cal__num">.</button>
+              <button data-op="-" class="b-cal__op">-</button>
+            </div>
+            <div class="b-cal__row">
+              <button data-func="clear" class="">AC</button>
+              <button data-func="back" class="">Back</button>
+              <button data-func="cal" class="">   =</button>
+            </div>
+          </div>
+        </div>
 
         <!-- 時區查詢 -->
         <div class="p-js-work__block mb-5">
@@ -148,7 +197,6 @@
             </li>
           </ul>
         </div>
-
 
         <!-- 空氣品質指標 -->
         <div class="p-js-work__block mb-5">

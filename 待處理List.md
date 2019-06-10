@@ -6,6 +6,8 @@
 # 待修正
 * 購物車 Tab active切換
 * 購物清單 Tag 樣式
+* 空氣品質 RWD
+* 計算機 linear-gradient
 
 # 可擴充練習
 * 空氣品質 風向
@@ -13,9 +15,6 @@
 # 待寫文章
 1. 陣列去重
 2. ES6陣列補完
-
-# 政府公開資料
-> https://script.google.com/macros/s/AKfycbwGkhTAu4_N_TdYC-Rxr2cC2sYLtY317P81-_a6xTWgok00h6P9/exec?url=https://script.google.com/macros/s/AKfycbzl6KKgb4v2-F3SCVxVaXjnMwM_XQvnk2A08nw7NjmGfuRVmak0/exec?url=http://opendata2.epa.gov.tw/AQI.json
 
 # XHR response & responseText
 

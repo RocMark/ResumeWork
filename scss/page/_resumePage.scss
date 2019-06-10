@@ -1,0 +1,114 @@
+
+
+.p-resume {
+  max-width: $max-contentW;
+  background-color: #f2f4f6;
+  margin: 5vh 10vw;
+  box-shadow: 2px 2px 3px 2px #9e9e9e;
+}
+.p-resume__header{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 40px 40px 0 40px;
+  .p-resume__links {
+    // margin-left: -1rem;
+    // align-self: flex-end;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    li {
+      margin-right: 1rem;
+      a{
+        color: color(text-color);
+        i {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  .p-resume__photo {
+    display: block;
+  }
+}
+
+.p-resume__content {
+  padding: 20px 40px 40px 40px;
+  .p-resume__title__block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: .5rem;
+    margin-bottom: 1.5rem;
+    i {
+      margin-left: 1rem;
+      transform: scale(2);
+    }
+    .p-resume__title{
+      display: inline;
+      margin-left: 1rem;
+      font-size: 2rem;
+    }
+  }
+  .p-resume__list {
+    padding-left: 20px;
+  }
+  .p-resume__list__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    .p-resume__list__title{
+      font-size: 2rem;
+    }
+    .p-resume__icon__list {
+      margin-left: 1rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      li {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        &:nth-child(1){
+          color: color(javascript);
+        }
+        &:nth-child(2){
+          color: color(bootstrap);
+        }
+        &:nth-child(3){
+          color: color(github);
+        }
+        &:nth-child(4){
+          color: color(scss);
+        }
+        &:nth-child(5){
+          color: color(muted);
+        }
+        &[data-color="darkblue"]{
+          color: #F48024;
+        }
+      }
+      i {
+        transform: scale(1.5);
+        margin-right: .7rem;
+      }
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.p-resume__case {
+  .p-resume__case__title {
+    font-size: 2rem;
+  }
+  .p-resume__case__link {
+    font-size: 1.3rem;
+  }
+}
