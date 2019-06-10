@@ -1811,6 +1811,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.maxContentW {
+  max-width: 1200px;
+}
+
 .inputBar {
   position: relative;
 }
