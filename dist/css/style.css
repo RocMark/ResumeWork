@@ -1446,6 +1446,12 @@ body {
   border-right: 2px solid #000;
 }
 
+@media all and (max-width: 576px) {
+  .b-aqi__table--rule {
+    display: none;
+  }
+}
+
 .b-aqi__table--rule th {
   padding: 10px;
 }
@@ -1637,6 +1643,99 @@ body {
           flex: 2;
 }
 
+.b-carousel {
+  position: relative;
+  width: 500px;
+  overflow: hidden;
+}
+
+@media all and (max-width: 576px) {
+  .b-carousel {
+    width: 400px;
+  }
+}
+
+.b-carousel .b-carousel__list {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+}
+
+.b-carousel .b-carousel__list .b-carousel__item {
+  position: relative;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media all and (max-width: 576px) {
+  .b-carousel .b-carousel__list .b-carousel__item {
+    width: 400px;
+  }
+}
+
+.b-carousel .b-carousel__list .b-carousel__item img {
+  width: inherit;
+  max-width: inherit;
+  height: auto;
+}
+
+.b-carousel .b-carousel__list .b-carousel__item .b-carousel__item__text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.b-carousel .b-carousel__nav {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.b-carousel .b-carousel__btn {
+  position: absolute;
+  top: 0;
+  height: 98%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.2;
+  width: 60px;
+  border: none;
+  cursor: pointer;
+}
+
+.b-carousel .b-carousel__btn:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.b-carousel .b-carousel__btn[data-dir="next"] {
+  right: 0;
+}
+
+.b-carousel .b-carousel__btn[data-dir="pre"] {
+  left: 0;
+}
+
 .p-resume {
   max-width: 1200px;
   background-color: #f2f4f6;
@@ -1748,10 +1847,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1767,6 +1862,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  vertical-align: middle;
 }
 
 .p-resume__content .p-resume__list__header .p-resume__icon__list li:nth-child(1) {

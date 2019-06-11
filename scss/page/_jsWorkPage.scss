@@ -103,6 +103,8 @@
   height: 76px;
   overflow: scroll; 
   @include table-border(#000,2px);
+  //down 小於 up 大於 between(mix,max)
+  @include media-sm{ display: none; };
   th {
     padding: 10px;
   }
@@ -222,5 +224,68 @@
         flex: 2;
       }
     }
+  }
+}
+
+
+$carouselW: 500px;
+.b-carousel {
+  position: relative;
+  width: $carouselW;
+  overflow: hidden;
+  @include media-sm{ width: 400px; };
+  
+  .b-carousel__list {
+    display: inline-flex; // 使容器 inline
+    overflow: hidden;
+    transition-duration: 2s;
+    
+    .b-carousel__item {
+      position: relative;
+      width: $carouselW;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media-sm{ width: 400px; };
+      img {
+        // flex: 1;
+        width: inherit;
+        max-width: inherit;
+        height: auto;
+      }
+      .b-carousel__item__text{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  }
+  .b-carousel__nav {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .b-carousel__btn{
+    position: absolute;
+    top: 0;
+    height: 98%;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.2;
+    width: 60px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+      transition: 0.5s;
+    }
+    &[data-dir="next"]{ right: 0; }
+    &[data-dir="pre"]{ left: 0; } 
   }
 }

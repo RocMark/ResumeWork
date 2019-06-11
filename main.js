@@ -2,7 +2,6 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
 
-
     /* Login Modal */
     const login = {
       modalShow: false,
@@ -34,6 +33,237 @@
       },
     }
     login.init()
+
+    /* 輪播 Carousel 練習*/
+    const carousel = {
+      data: [
+        {
+          imgUrl: 'https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+          text: 'TextA',
+        },
+        {
+          imgUrl: 'https://images.unsplash.com/photo-1506269085878-5c33839927e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+          text: 'TextB',
+        },
+        {
+          imgUrl: 'https://images.unsplash.com/photo-1506765515384-028b60a970df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+          text: 'TextC',
+        },
+      ],
+      currentIndex: 0,
+      carouselWidth: 0,
+      autoLoopTimer: null,
+      dom: {
+        carousel: document.querySelector('.b-carousel'),
+        imgList: document.querySelector('.b-carousel__list'),
+        nav: document.querySelector('.b-carousel__nav'),
+        nextBtn: document.querySelector('.b-carousel__btn[data-dir="next"]'),
+        preBtn: document.querySelector('.b-carousel__btn[data-dir="pre"]'),
+      },
+      init() {
+        // 取得 carousel 寬度 用來位移
+        this.getCarouselWidth()
+        // 渲染圖片 & nav
+        this.renderCarousel()
+        // 監聽 nextBtn preBtn nav
+        this.dom.nextBtn.addEventListener('click', this.swipeEvt)
+        this.dom.preBtn.addEventListener('click', this.swipeEvt)
+        this.dom.nav.addEventListener('click', this.navEvt)
+
+        // setting autoLoop Timer
+        this.autoLoopTimer = setInterval(carousel.autoLoop, 3000)
+
+        // 輪播 hover Toggle AutoLoop
+        this.dom.carousel.addEventListener('mouseenter', this.toggleSetInterval)
+        this.dom.carousel.addEventListener('mouseleave', this.toggleSetInterval)
+      },
+      // 開關 autoLoop
+      toggleSetInterval(e) {
+        const eventType = e.type
+        // console.log(eventType)
+        if (eventType === 'mouseenter') {
+          // 滑鼠移入，移除計時器，關閉自動輪播效果
+          window.clearInterval(carousel.autoLoopTimer)
+        } else if (eventType === 'mouseleave') {
+          // 滑鼠移出，重新掛載計時器，啟動自動輪播
+          carousel.autoLoopTimer = setInterval(carousel.autoLoop, 3000)
+        }
+      },
+      // 取得 carousel 寬度 用來位移
+      getCarouselWidth() {
+        this.carouselWidth = parseInt(window.getComputedStyle(this.dom.carousel).getPropertyValue('width'), 10)
+        console.log('carouselW', this.carouselWidth)
+      },
+      // 載入網頁時 從 data 渲染 nav & 圖片
+      renderCarousel() {
+        // render 相同數量的 img & radio 
+        // render img list
+        let ImgListDomStr = ''
+        carousel.data.forEach((el) => {
+          const tplStr = `
+          <div class="b-carousel__item">
+            <span class="b-carousel__item__text">${el.text}</span>
+            <img src="${el.imgUrl}"  alt="${el.text}">
+          </div>
+          `
+          ImgListDomStr += tplStr
+        })
+        carousel.dom.imgList.innerHTML = ImgListDomStr
+        // render nav radio
+        let navDomStr = ''
+        carousel.data.forEach((el, index) => {
+          let tplStr = `
+            <input type="radio" data-index="${index}" name="b-carousel">
+          `
+          navDomStr += tplStr
+        })
+        carousel.dom.nav.innerHTML = navDomStr
+        carousel.dom.nav.children[0].checked = true
+      },
+      // 執行動畫
+      transformImgList() {
+        let result = +(carousel.currentIndex) * +(carousel.carouselWidth)
+        carousel.dom.imgList.style.transform = `translateX(-${result}px)`
+        // console.log('position', result)
+        // 將目前顯示圖片對應的nav checked
+        carousel.dom.nav.children[carousel.currentIndex].checked = true
+      },
+      // 點擊 nextBtn & preBtn 觸發
+      swipeEvt(e) {
+        // 關閉 autoLoop的計時器
+        window.clearInterval(carousel.autoLoopTimer)
+        // console.log('currentIndex', carousel.currentIndex)
+        const { dir } = e.target.dataset
+        if (dir === 'next') {
+          carousel.swipeNextEvt()
+        } else {
+          carousel.swipePreEvt()
+        }
+      },
+      // preBtn 事件處理
+      swipePreEvt() { 
+        if (carousel.currentIndex <= 0) {
+          console.log('現在在首張')
+        } else {
+          carousel.currentIndex -= 1
+          carousel.transformImgList()
+        }
+      },
+      // nextBtn 事件處理
+      swipeNextEvt() {
+        if (carousel.currentIndex >= carousel.data.length - 1) {
+          console.log('現在末張')
+        } else {
+          carousel.currentIndex += 1
+          carousel.transformImgList()
+        }
+      },
+      // nav 點擊事件
+      navEvt(e) {
+        const tagName = e.target.tagName.toLowerCase()
+        if (tagName === 'input') {
+          carousel.currentIndex = +(e.target.dataset.index)
+          carousel.transformImgList()
+        }
+      },
+      // 自動輪播
+      autoLoop() {
+        let index = carousel.currentIndex
+        const { length } = carousel.data
+        if (index >= 0 && index < length - 1) {
+          carousel.currentIndex += 1
+        } else if (index === length - 1) {
+          carousel.currentIndex = 0
+        }
+        carousel.transformImgList()
+      },
+    }
+
+
+    /* 計算機 (未完成)*/
+    const calculator = {
+      dom: {
+        tmpStr: document.querySelector('.b-cal__str'),
+        val: document.querySelector('.b-cal__val'),
+        parent: document.querySelector('.b-cal'),
+      },
+      tmpStr: '',
+      tmpNum: '',
+      currentVal: '',
+      init() {
+        calculator.dom.parent.addEventListener('click', calculator.clickEvt)
+      },
+      clickEvt(e) {
+        // console.log('test', e.currentTarget.querySelectorAll('[data-func]'))
+
+        const dataFunc = e.target.dataset.func
+        const className = e.target.classList
+        if (className.contains('b-cal__num')) {
+          const val = e.target.dataset.num
+          calculator.pressNumFunc(val)
+        } else if (className.contains('b-cal__op')) {
+          const { op } = e.target.dataset
+          calculator.pressOpFunc(op)
+        } else if (dataFunc === 'clear') {
+          calculator.clearFunc()
+        } else if (dataFunc === 'back') {
+          calculator.backFunc()
+        } else if (dataFunc === 'cal') {
+          calculator.calFunc()
+        }
+        
+        console.log('tpmStr', calculator.tmpStr)
+        console.log('currentVal', calculator.currentVal)
+        console.log('tmpNum', calculator.tmpNum)
+      },
+      // 按按鍵程式 傳入type 數字num或運算子op & 值
+      calFunc() {
+        // eslint-disable-next-line
+        const result = eval(this.tmpStr)
+        //* 利用正字記號 去掉開頭0 
+        //? 需要有至少有兩數字才運行
+
+        if (this.tmpStr.length > 0) {
+          this.renderOutPut(this.tmpStr, (+result))
+        }
+      },
+      // 按下等號觸發
+      pressNumFunc(val) {
+        //? 要判斷 前面是運算子才有效
+        this.tmpNum += val
+        this.tmpStr += val
+        this.currentVal += val
+        this.renderOutPut(this.tmpStr, this.currentVal)
+      },
+      pressOpFunc(val) {
+        //? 要判斷如果沒有數字 & 前面是運算子也無效 就無效
+        //? 按-號要顯示
+        //! 小數點不能連按 (disabled按鈕去作?)
+        //* 提示訊息
+        this.tmpNum = ''
+        this.tmpStr += val
+        console.log(this.tmpStr)
+        this.renderOutPut(this.tmpStr)
+      },
+      // 退一位Function (刪一位 val & tmpStr / 渲染回去)
+      backFunc() {
+        //! 待修正
+      },
+      // 重置Function
+      clearFunc() {
+        calculator.renderOutPut('0', '0')
+        calculator.tmpStr = ''
+        calculator.currentVal = ''
+        calculator.tmpNum = ''
+      },
+      // 渲染結果
+      renderOutPut(str = 'NaN', val = '') {
+        calculator.dom.tmpStr.innerText = str
+        calculator.dom.val.innerText = val
+        calculator.tmpNum = ''
+      },
+    }
+    
 
     /* 時區查詢 */
     const timeZone = {
@@ -1024,18 +1254,21 @@
     /* 偵測當前分頁 啟動相應JS */
     const runDetect = function () {
       const currentPage = window.location.href
+      console.log(currentPage)
       if (currentPage.includes('cart')) {
         // cart頁才啟動
         myLocalStorage.init()
       } else if (currentPage.includes('js30')) {
         // JS30 頁才啟動
+        carousel.init()
+        calculator.init()
         timeZone.init()
         aqi.init()  
         clock.init()
         drum.init()
         arrayCardio.init()
         myConsole.init()
-      } else {
+      } else if (!currentPage.includes('resume')) {
         // Index 頁才啟動
         smScroll.init()
       }

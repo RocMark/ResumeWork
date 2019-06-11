@@ -16,6 +16,9 @@
 
 @import './utils/animation';
 
+// media
+@import './media/media-setting';
+
 // Reset
 @import './config/normalize';
 
@@ -68,9 +71,5 @@ html {
 
 
 
-
-
-// media
-@import './media/media-setting';
 
 @import './media/media';
