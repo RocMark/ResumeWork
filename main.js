@@ -143,7 +143,9 @@
       // preBtn 事件處理
       swipePreEvt() { 
         if (carousel.currentIndex <= 0) {
-          console.log('現在在首張')
+          carousel.currentIndex = carousel.data.length - 1 
+          carousel.transformImgList()
+          // console.log('現在在首張')
         } else {
           carousel.currentIndex -= 1
           carousel.transformImgList()
@@ -152,7 +154,9 @@
       // nextBtn 事件處理
       swipeNextEvt() {
         if (carousel.currentIndex >= carousel.data.length - 1) {
-          console.log('現在末張')
+          carousel.currentIndex = 0
+          carousel.transformImgList()
+          // console.log('現在末張')
         } else {
           carousel.currentIndex += 1
           carousel.transformImgList()
