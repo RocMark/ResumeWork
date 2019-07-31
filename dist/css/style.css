@@ -1847,6 +1847,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1856,13 +1858,7 @@ body {
 
 .p-resume__content .p-resume__list__header .p-resume__icon__list li {
   margin-right: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  vertical-align: middle;
+  display: inline-block;
 }
 
 .p-resume__content .p-resume__list__header .p-resume__icon__list li:nth-child(1) {
